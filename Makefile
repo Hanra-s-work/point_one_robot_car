@@ -9,11 +9,11 @@ SRC	=	./main.cpp
 
 OBJ	=	$(SRC:.cpp=.o)
 
-CC	=	gcc
+CC	=	g++
 
 CFLAGS	=	-Wall -Wextra -str=gnu17
 
-CPPFLAGS	=	-I./include
+CPPFLAGS	=	-iquote./include
 
 NAME	=	runner
 
@@ -27,7 +27,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm unit_tests
 
 re: fclean all clean
 
