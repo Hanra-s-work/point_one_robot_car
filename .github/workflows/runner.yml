@@ -1,5 +1,4 @@
-name: run_unit_tests
-
+name: workflow_runner
 on:
   push:
     tags:
