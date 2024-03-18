@@ -119,6 +119,8 @@ clean:
 # 	Removing the build and distribution folder of the executable
 	rm -rf $(BUILD_LOCATION)
 	rm -rf $(BINARY_LOCATION)
+#  Removing python runtime cache
+	find . -type d -name __pycache__ -exec rm -r {} +
 
 # Clean the binaries produced
 clean_env:
