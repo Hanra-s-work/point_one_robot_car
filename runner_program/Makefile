@@ -34,8 +34,17 @@ clean_binary_location:
 fclean: clean clean_binary_location
 	rm -f $(NAME)
 
-re: fclean all clean
+tests_run:
+	exit 0
 
-.PHONY: fclean all clean re \
+coverage:
+	exit 0
+
+debug: CFLAGS += -g3
+debug: all
+
+re: fclean all
+
+.PHONY: fclean all clean re tests_run coverage debug \
 		update_binary_location clean_binary_location
 
