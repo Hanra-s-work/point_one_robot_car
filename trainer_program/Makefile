@@ -143,9 +143,10 @@ fclean: clean clean_env clean_coverage
 	rm -vf $(BINARY_DESTINATION_TWO)$(NAME)
 
 # Run the tests for the programs
-tests_run: 
+tests_run: install_dependencies
 #	Updating the path for python to find the imports
 	export PYTHONPATH=.:$$PYTHONPATH;	\
+	. $(ENV_NAME)/bin/activate && \
 	$(CC) -m unittest discover -s $(TEST_DIR)
 
 # Check the coverage for the programs
