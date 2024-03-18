@@ -1,0 +1,7 @@
+tty_ov == 1.0.19
+
+
+# Dependencies for creating an executable
+pyinstaller == 6.5.0
+pillow == 10.2.0
+coverage == 7.4.4
