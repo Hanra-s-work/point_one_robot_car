@@ -7,9 +7,9 @@
 
 # The folders of the trainer and runners
 
-TRAINER_DIR	=	./trainer
+TRAINER_DIR	=	./trainer_program
 
-RUNNER_DIR	=	./runner
+RUNNER_DIR	=	./runner_program
 
 # Compile the projects
 
