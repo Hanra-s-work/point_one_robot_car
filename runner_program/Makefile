@@ -11,24 +11,31 @@ OBJ	=	$(SRC:.cpp=.o)
 
 CC	=	g++
 
-CFLAGS	=	-Wall -Wextra -str=gnu17
+CFLAGS	=	-Wall -Wextra -std=gnu17
 
 CPPFLAGS	=	-iquote./include
 
 NAME	=	runner
 
-all:	$(NAME)
+all:	$(NAME) update_binary_location
 
 $(NAME):	$(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(CPPFLAGS)
 
+update_binary_location:
+	cp -vf $(NAME) ../
+
 clean:
 	rm -f $(OBJ)
 
-fclean: clean
+clean_binary_location:
+	rm -vf ../$(NAME)
+
+fclean: clean clean_binary_location
 	rm -f $(NAME)
 
 re: fclean all clean
 
-.PHONY: fclean all clean re
+.PHONY: fclean all clean re \
+		update_binary_location clean_binary_location
 
