@@ -40,8 +40,10 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .nox/
+coverage_data/
 .coverage
 .coverage.*
+*.coverage
 .cache
 nosetests.xml
 coverage.xml
@@ -127,6 +129,7 @@ venv/
 wenv/
 lenv/
 menv/
+trainer_env/
 ENV/
 env.bak/
 venv.bak/
@@ -166,3 +169,7 @@ cython_debug/
 .vscode/
 *.DS_Store
 *.suo
+
+# Project binaries
+runner
+trainer
