@@ -74,6 +74,7 @@ create_environement:
 # Install the python dependencies
 install_dependencies: create_environement
 	. $(ENV_NAME)/bin/activate && \
+	$(CC) -m pip install --upgrade pip
 	pip3 list && \
 	pip3 install -r requirements.txt
 
@@ -150,7 +151,7 @@ tests_run: install_dependencies
 	$(CC) -m unittest discover -s $(TEST_DIR)
 
 # Check the coverage for the programs
-coverage:
+coverage: install_dependencies
 	mkdir -p $(COVERAGE_DIR)
 	. $(ENV_NAME)/bin/activate && \
 	\
