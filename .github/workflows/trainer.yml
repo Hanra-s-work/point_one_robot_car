@@ -1,11 +1,11 @@
 name: workflow_trainer
 on:
-  push:
-    tags:
-      - 'v*.*.*'
-    branches:
-      - main
-      - github_action_stabilisation
+  # push:
+  #   tags:
+  #     - 'v*.*.*'
+  #   branches:
+  #     - main
+  #     - github_action_stabilisation
   pull_request:
   workflow_dispatch:
 

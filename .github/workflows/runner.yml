@@ -60,6 +60,8 @@ jobs:
         run: |
           make fclean
           make
+          echo "Displaying the content of the repository"
+          ls -ls
       
       - name: Update author
         run: |
