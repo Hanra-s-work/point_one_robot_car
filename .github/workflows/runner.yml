@@ -11,8 +11,8 @@ on:
 
 env:
     WORKFLOW_RUNNER: "github"
-    RUNNER_BINARY_NAME: "runner"
-    TRAINER_BINARY_NAME: "trainer"
+    RUNNER_BINARY_NAME: "./runner"
+    TRAINER_BINARY_NAME: "./trainer"
 
 jobs:
   check-runner-health:
