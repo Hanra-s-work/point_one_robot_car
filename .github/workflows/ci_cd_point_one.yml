@@ -13,6 +13,9 @@ env:
     WORKFLOW_RUNNER: "github"
     RUNNER_BINARY_NAME: "./runner"
     TRAINER_BINARY_NAME: "./trainer"
+    COMMIT_TITLE: ""
+    COMMIT_MESSAGE: ""
+
 
 jobs:
   check-runner-health:
@@ -68,6 +71,25 @@ jobs:
           git config --local user.name "${{secrets.USER_NAME_E}}"
           git config --local user.email "${{secrets.USER_EMAIL_E}}"
           
+      - name: Get tag title
+        run: |
+          TAG_NAME=${{ github.ref }}
+          COMMIT_TITLE=$(git tag -l --format='%(subject)' $TAG_NAME)
+          echo "Commit title: $COMMIT_TITLE"
+          echo "::set-env name=COMMIT_TITLE::$COMMIT_TITLE"
+      
+      - name: Extract Tag Info
+        id: extract_tag_info
+        run: |
+          TAG_NAME=${{ github.ref }}
+          COMMIT_MESSAGE=$(git tag -l --format='%(contents)' $TAG_NAME)
+          if [[ -n "$COMMIT_MESSAGE" ]]; then
+            echo "::set-env name=COMMIT_MESSAGE::$COMMIT_MESSAGE"
+          else
+            COMMIT_TITLE=$(git log --format=%s -n 1)
+            echo "::set-env name=COMMIT_MESSAGE::$COMMIT_TITLE"
+          fi
+      
       - name: Publish binary as GitHub release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
@@ -75,9 +97,7 @@ jobs:
           files: |
             ${{ env.RUNNER_BINARY_NAME }}
             ${{ env.TRAINER_BINARY_NAME }}
-          # tag_name: ${{ github.ref }}
-          # release_name: ${{ github.ref }}
-          body: |
-            Release ${{ github.ref }}
+          name: ${{ env.COMMIT_TITLE }}
+          body: ${{ env.COMMIT_MESSAGE }}
           draft: false
           prerelease: false
