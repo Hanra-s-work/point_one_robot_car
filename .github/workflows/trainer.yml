@@ -1,4 +1,4 @@
-name: workflow_runner
+name: workflow_trainer
 on:
   push:
     tags:
@@ -72,12 +72,10 @@ jobs:
         with:
           files: |
             ${RUNNER_BINARY_NAME}
-            ${TRAINNER_BINARY_NAME}
+            ${TRAINER_BINARY_NAME}
           # tag_name: ${{ github.ref }}
           # release_name: ${{ github.ref }}
           # body: |
           #   Release ${{ github.ref }}
           # draft: false
           # prerelease: false
-
-
