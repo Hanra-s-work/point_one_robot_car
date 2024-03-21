@@ -76,7 +76,7 @@ jobs:
           TAG_NAME=${{ github.ref }}
           COMMIT_TITLE=$(git tag -l --format='%(subject)' $TAG_NAME)
           echo "Commit title: $COMMIT_TITLE"
-          echo "::set-env name=COMMIT_TITLE::$COMMIT_TITLE"
+          echo "COMMIT_TITLE=$COMMIT_TITLE" >> $GITHUB_ENV
       
       - name: Extract Tag Info
         id: extract_tag_info
@@ -84,10 +84,10 @@ jobs:
           TAG_NAME=${{ github.ref }}
           COMMIT_MESSAGE=$(git tag -l --format='%(contents)' $TAG_NAME)
           if [[ -n "$COMMIT_MESSAGE" ]]; then
-            echo "::set-env name=COMMIT_MESSAGE::$COMMIT_MESSAGE"
+            echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_ENV
           else
             COMMIT_TITLE=$(git log --format=%s -n 1)
-            echo "::set-env name=COMMIT_MESSAGE::$COMMIT_TITLE"
+            echo "COMMIT_MESSAGE=$COMMIT_TITLE" >> $GITHUB_ENV
           fi
       
       - name: Publish binary as GitHub release
