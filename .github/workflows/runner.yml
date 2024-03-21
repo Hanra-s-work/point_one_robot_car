@@ -37,9 +37,9 @@ jobs:
           echo "Installed packages"
           pip list
           echo "Activating environment if exists"
-          if [ -f ./trainer_program/venv/bin/activate ]; then
+          if [ -f ./trainer_program/trainer_env/bin/activate ]; then
             echo "Environment exists, activating"
-            source ./trainer_program/venv/bin/activate
+            source ./trainer_program/trainer_env/bin/activate
             echo "Installed packages"
             pip list
           else
