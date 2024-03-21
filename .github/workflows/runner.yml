@@ -32,8 +32,17 @@ jobs:
         run: |
           echo "Content of the repository"
           ls -ls
+          echo "Content of the trainner folder"
+          ls -ls ./trainer_program
           echo "Installed packages"
           pip list
+          echo "Activating environment if exists"
+          if [ -f ./trainer_program/venv/bin/activate ]; then
+            echo "Environment exists, activating"
+            source ./trainer_program/venv/bin/activate
+            echo "Installed packages"
+            pip list
+          fi
           make tests_run
 
   publish-package:
