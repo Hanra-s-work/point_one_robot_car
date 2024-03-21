@@ -8,6 +8,10 @@
     {
       "matchDepTypes": ["optionalDependencies"],
       "addLabels": ["optional"]
+    },
+    {
+      "matchPackagePatterns": ["python", "cpp"],
+      "labels": ["python-cpp"]
     }
   ]
 }
