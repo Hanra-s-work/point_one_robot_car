@@ -29,6 +29,10 @@ jobs:
       - name: Check unit test
         id: unit-test-status
         run: |
+          echo "Content of the repository"
+          ls -ls
+          echo "Installed packages"
+          pip list
           make tests_run
 
   publish-package:
