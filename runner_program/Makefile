@@ -19,7 +19,7 @@ CC	=	g++
 
 # The flags that are to be applied during the compilation
 
-CFLAGS	=	-Wall -Wextra -std=gnu17
+CFLAGS	=	-Wall -Wextra
 
 # The location of the header files
 
