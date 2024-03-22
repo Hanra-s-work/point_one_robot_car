@@ -65,7 +65,7 @@ endif
 # Search for pip version
 PIP_BIN	=	$(shell command -v pip3 --version 2>/dev/null || \
 			command -v pip --version 2>/dev/null || \
-			command -v $(CC) -m pip --version 2>/dev/null
+			command -v $(CC) -m pip --version 2>/dev/null \
 )
 
 # Break the code if no python instance was found
