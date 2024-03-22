@@ -51,7 +51,8 @@ BINARY_DESTINATION_TWO	=	../
 
 # The python binary that is available on the system
 
-CC	=	$(shell command -v python3 2>/dev/null || \
+CC	=	$(shell command -v python3.9 2>/dev/null || \
+			command -v python3 2>/dev/null || \
 			command -v python 2>/dev/null || \
 			command -v py 2>/dev/null)
 
@@ -59,6 +60,18 @@ CC	=	$(shell command -v python3 2>/dev/null || \
 
 ifndef CC
 	$(error Python interpreter not found. Please install Python.)
+endif
+
+# Search for pip version
+PIP_BIN	=	$(shell command -v pip3 --version 2>/dev/null || \
+			command -v pip --version 2>/dev/null || \
+			command -v $(CC) -m pip --version 2>/dev/null
+)
+
+# Break the code if no python instance was found
+
+ifndef $(PIP_BIN)
+	$(error Pip interpreter not found. Please install a pip interpreter.)
 endif
 
 # Silence the outputs we wish not to listen to
@@ -89,9 +102,9 @@ install_dependencies: create_environement
 	echo -e "$(C_CYAN)Upgrading pip$(C_RESET)" &&\
 	$(CC) -m pip install --upgrade pip && \
 \
-	pip3 list && \
+	$(PIP_BIN) list && \
 	echo -e "$(C_CYAN)Installing python dependencies$(C_RESET)" &&\
-	pip3 install -r requirements.txt
+	$(PIP_BIN) install -r requirements.txt
 
 # Activate the python environement (
 #	this is a shortcut to help you keep your
@@ -102,7 +115,7 @@ activate_environement:	install_dependencies
 	$(SILENT) . $(ENV_NAME)/bin/activate && \
 	export PYTHONPATH=.:$$PYTHONPATH; \
 	echo "Environement activated" && \
-	bin/bash ; \
+	/bin/bash ; \
 	STATUS=$$? ; \
 	echo "Environement deactivated" && \
 	echo "Exit code: $$STATUS" && \
