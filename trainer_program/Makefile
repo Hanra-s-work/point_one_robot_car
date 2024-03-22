@@ -70,7 +70,7 @@ PIP_BIN	=	$(shell command -v pip3 --version 2>/dev/null || \
 
 # Break the code if no python instance was found
 
-ifndef $(PIP_BIN)
+ifndef PIP_BIN
 	$(error Pip interpreter not found. Please install a pip interpreter.)
 endif
 
