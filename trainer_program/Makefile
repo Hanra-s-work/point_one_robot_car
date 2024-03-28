@@ -51,14 +51,25 @@ BINARY_DESTINATION_TWO	=	../
 
 # The python binary that is available on the system
 
-CC	=	$(shell command -v python3 2>/dev/null || \
+CC	=	$(shell command -v python3.9 2>/dev/null || \
+			command -v python3 2>/dev/null || \
 			command -v python 2>/dev/null || \
-			command -v py 2>/dev/null)
+			command -v py 2>/dev/null \
+)
 
 # Break the code if no python instance was found
 
 ifndef CC
 	$(error Python interpreter not found. Please install Python.)
+endif
+
+# Search for pip version
+MY_PIP_BIN	=	pip3 # Please update it manually {the automation check seems to break the environment}
+
+# Break the code if no python instance was found
+
+ifndef MY_PIP_BIN
+	$(error Pip interpreter not found. Please install a pip interpreter.)
 endif
 
 # Silence the outputs we wish not to listen to
@@ -89,9 +100,9 @@ install_dependencies: create_environement
 	echo -e "$(C_CYAN)Upgrading pip$(C_RESET)" &&\
 	$(CC) -m pip install --upgrade pip && \
 \
-	pip3 list && \
+	$(MY_PIP_BIN) list && \
 	echo -e "$(C_CYAN)Installing python dependencies$(C_RESET)" &&\
-	pip3 install -r requirements.txt
+	$(MY_PIP_BIN) install -r requirements.txt 
 
 # Activate the python environement (
 #	this is a shortcut to help you keep your
@@ -99,10 +110,10 @@ install_dependencies: create_environement
 # )
 activate_environement:	install_dependencies
 	@echo -e "$(C_PINK)Activating environement '$(ENV_NAME)'$(C_RESET)"
-	$(SILENT) . $(ENV_NAME)/bin/activate && \
+	$(SILENT) . ./$(ENV_NAME)/bin/activate && \
 	export PYTHONPATH=.:$$PYTHONPATH; \
 	echo "Environement activated" && \
-	bin/bash ; \
+	/bin/bash ; \
 	STATUS=$$? ; \
 	echo "Environement deactivated" && \
 	echo "Exit code: $$STATUS" && \
@@ -113,7 +124,7 @@ activate: activate_environement
 # Build the python code as a binary
 build_binary:
 	@echo -e "$(C_BLUE)Building binary '$(C_YELLOW)$(NAME)$(C_BLUE)'$(C_RESET)"
-	$(SILENT) . $(ENV_NAME)/bin/activate && \
+	$(SILENT) . ./$(ENV_NAME)/bin/activate && \
 	pyinstaller \
 				$(SRC)	\
 				--workpath $(BUILD_LOCATION) --distpath $(BINARY_LOCATION)	\
@@ -148,7 +159,7 @@ clean:
 clean_env:
 	@echo -ne "$(C_YELLOW)Cleaning $(C_CYAN)environement "
 	@echo -e  "'$(C_RED)$(ENV_NAME)$(C_CYAN)'$(C_RESET)"
-	$(SILENT) rm -rf $(ENV_NAME)
+	$(SILENT) rm -rf ./$(ENV_NAME)
 	@echo -ne "$(C_CYAN)Environement '$(C_RED)$(ENV_NAME)$(C_CYAN)' "
 	@echo -e  "$(C_GREEN)cleaned$(C_RESET)"
 
@@ -171,7 +182,7 @@ tests_run: install_dependencies
 	@echo -e "$(C_RED)Running unit tests$(C_RESET)"
 #	Updating the path for python to find the imports
 	$(SILENT) export PYTHONPATH=.:$$PYTHONPATH;	\
-	. $(ENV_NAME)/bin/activate && \
+	. ./$(ENV_NAME)/bin/activate && \
 	$(CC) -m unittest discover -s $(TEST_DIR)
 	@echo -e "$(C_RED)Unit tests $(C_GREEN)run$(C_RESET)"
 
@@ -179,7 +190,7 @@ tests_run: install_dependencies
 coverage: install_dependencies
 	@echo -e "$(C_CYAN)Generating coverage report$(C_RESET)"
 	$(SILENT) mkdir -p $(COVERAGE_DIR)
-	$(SILENT) . $(ENV_NAME)/bin/activate && \
+	$(SILENT) . ./$(ENV_NAME)/bin/activate && \
 	\
 	coverage run --data-file $(COVERAGE_DIR)/report.coverage \
 	-m unittest discover -s $(TEST_DIR) && \
