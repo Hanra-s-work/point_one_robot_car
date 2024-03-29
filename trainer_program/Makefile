@@ -9,7 +9,10 @@
 SRC_DIR	=	./src
 
 SRC	=	$(SRC_DIR)/main.py	\
-		$(SRC_DIR)/constants.py
+		$(SRC_DIR)/get_data.py	\
+		$(SRC_DIR)/constants.py	\
+		$(SRC_DIR)/output_processed_data.py	\
+		$(SRC_DIR)/test.py
 
 # The variables concerning unit testing
 
@@ -130,7 +133,8 @@ build_binary:
 				--workpath $(BUILD_LOCATION) --distpath $(BINARY_LOCATION)	\
 				--onefile --noconfirm	\
 				--name $(NAME)	\
-				--log-level=$(LOG_LEVEL)
+				--log-level=$(LOG_LEVEL)	\
+				-y
 	@echo -ne "$(C_BLUE)Binary '$(C_YELLOW)$(NAME)$(C_BLUE)' "
 	@echo -e  "$(C_GREEN)built$(C_RESET)"
 

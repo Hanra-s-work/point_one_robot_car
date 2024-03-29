@@ -5,65 +5,50 @@
 # main.py
 ##
 
-import sys
-import src.constants as CONST
-from tty_ov import TTY, ColouriseOutput, AskQuestion
+import os
+from src.get_data import GetData
+from src.output_processed_data import OutputProccessedData
 
 
 class Main:
     """ The main class of the program """
 
-    def __init__(self, colourise_output: bool = True) -> None:
+    def __init__(self, data_path: str = "./data", output_path: str = "./out", error: int = 84, success: int = 0) -> None:
         super().__init__()
-        self.err = CONST.ERR
-        self.error = CONST.ERROR
-        self.success = CONST.SUCCESS
-        self.colours = CONST.COLOURS
-        # finish the imports
-        self.co = ColouriseOutput()
-        self.aq = AskQuestion()
-        self.tty = TTY(
-            self.err,
-            self.error,
-            self.success,
-            self.co,
-            self.aq,
-            CONST.COLOURS,
-            colourise_output
+        self.error = error
+        self.success = success
+        self.loaded_images = {}
+        self.data_path = data_path
+        self.output_path = output_path
+        self.get_data = GetData(self.data_path)
+        self.output_processed_data = OutputProccessedData(
+            self.loaded_images,
+            self.output_path
         )
-        self.tty.load_basics()
 
     def main(self) -> None:
         """ The main function of the program """
-        status = self.tty.mainloop()
-        self.tty.unload_basics()
-        print()
-        sys.exit(status)
-
-
-def test_function() -> None:
-    """ A test function """
-    print("Test function")
-
-
-def test_function2() -> str:
-    """ A test function """
-    return "Test function2"
-
-
-def test_function3() -> str:
-    """ A test function """
-    return input("Test function3:")
-
-
-def test_function4() -> None:
-    """ A test function """
-    print(f"You have entered: {input('Test function4:')}")
+        self.loaded_images = self.get_data.main()
+        self.output_processed_data.main()
 
 
 if __name__ == "__main__":
-    COLOURISE_OUTPUT = True
-    if "-nc" in sys.argv or "--no-colour" in sys.argv:
-        COLOURISE_OUTPUT = False
-    main = Main(COLOURISE_OUTPUT)
-    main.main()
+    def check_paths(data_path: str, output_path: str) -> None:
+        """ Check the paths """
+        if not os.path.exists(data_path):
+            os.makedirs(data_path)
+        if not os.path.exists(output_path):
+            os.makedirs(output_path)
+
+    ERROR = 84
+    SUCCESS = 0
+    DATA_PATH = "./data"
+    OUTPUT_PATH = "./out"
+    check_paths(DATA_PATH, OUTPUT_PATH)
+    MI = Main(
+        DATA_PATH,
+        OUTPUT_PATH,
+        ERROR,
+        SUCCESS
+    )
+    MI.main()
