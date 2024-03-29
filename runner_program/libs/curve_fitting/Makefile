@@ -43,6 +43,16 @@ fclean: clean
 		$(RM) ../$(NAME)
 		$(RM) ../../$(NAME)
 
+tests_run:
+	@exit 0
+
+coverage:
+	@exit 0
+
+debug:
+	@exit 0
+
 re:	fclean all
 
-.PHONY:	all update_include_files update_library_path clean fclean re
+.PHONY:	all update_include_files update_library_path clean fclean re \
+		tests_run coverage debug
