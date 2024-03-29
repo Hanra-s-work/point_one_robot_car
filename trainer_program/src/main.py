@@ -32,6 +32,26 @@ class Main:
         self.output_processed_data.main()
 
 
+def test_function() -> None:
+    """ A test function """
+    print("Test function")
+
+
+def test_function2() -> str:
+    """ A test function """
+    return "Test function2"
+
+
+def test_function3() -> str:
+    """ A test function """
+    return input("Test function3:")
+
+
+def test_function4() -> None:
+    """ A test function """
+    print(f"You have entered: {input('Test function4:')}")
+
+
 if __name__ == "__main__":
     def check_paths(data_path: str, output_path: str) -> None:
         """ Check the paths """
