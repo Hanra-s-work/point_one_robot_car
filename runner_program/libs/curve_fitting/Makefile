@@ -26,7 +26,7 @@ NAME	=	libcurve_fitting.a
 all:	update_include_files $(NAME) update_library_path
 
 $(NAME):	$(OBJ)
-		ar rc $(OBJ) -o $(NAME)
+		ar rc $(NAME) $(OBJ) 
 
 update_include_files:
 	$(CP) $(INCLUDE_FILE) ../../include/
