@@ -21,28 +21,22 @@ C_YELLOW	=	\033[38;5;226m$(C_BACKGROUND)
 
 # Compile the project
 all:
-#	$(SILENT) make SILENT=$(SILENT) -C ./my_lib
-	$(SILENT) exit 0
+	$(SILENT) make SILENT=$(SILENT) -C ./curve_fitting
 
 clean:
-#	$(SILENT) make SILENT=$(SILENT) -C ./my_lib clean
-	$(SILENT) exit 0
+	$(SILENT) make SILENT=$(SILENT) -C ./curve_fitting clean
 
 fclean: clean
-#	$(SILENT) make SILENT=$(SILENT) -C ./my_lib fclean
-	$(SILENT) exit 0
+	$(SILENT) make SILENT=$(SILENT) -C ./curve_fitting fclean
 
 tests_run:
-#	$(SILENT) make SILENT=$(SILENT) -C ./my_lib tests_run
-	$(SILENT) exit 0
+	$(SILENT) make SILENT=$(SILENT) -C ./curve_fitting tests_run
 
 coverage:
-#	$(SILENT) make SILENT=$(SILENT) -C ./my_lib coverage
-	$(SILENT) exit 0
+	$(SILENT) make SILENT=$(SILENT) -C ./curve_fitting coverage
 
 debug: 
-#	$(SILENT) make SILENT=$(SILENT) -C ./my_lib debug
-	$(SILENT) exit 0
+	$(SILENT) make SILENT=$(SILENT) -C ./curve_fitting debug
 
 re: fclean all
 

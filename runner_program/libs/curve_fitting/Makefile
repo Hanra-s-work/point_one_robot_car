@@ -5,7 +5,7 @@
 ## jitter jitter
 ##
 
-SRC	=	./	\
+SRC	=	./main.cpp	\
 
 CC	=	g++
 

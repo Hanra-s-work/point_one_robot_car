@@ -31,7 +31,7 @@ LIB_DIR = -L./libs
 
 # Libraries
 
-LIBS = # -llib1 -llib2
+LIBS = -lcurve_fitting
 
 # The final name of the binary
 
