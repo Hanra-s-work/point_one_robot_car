@@ -18,7 +18,7 @@
   <lib desc="#BFH-Praktika" name="9"/>
   <lib desc="#Input/Output-Extra" name="10"/>
   <lib desc="#Soc" name="11"/>
-  <main name="Fsky_Fsesc_Mini_V6dot7_Pro"/>
+  <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -55,7 +55,23 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="main"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="clabelup" val="south"/>
     <a name="simulationFrequency" val="1000.0"/>
+    <comp lib="0" loc="(1340,620)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Screen"/>
+    </comp>
+    <comp lib="0" loc="(1450,510)" name="Splitter">
+      <a name="appear" val="right"/>
+      <a name="facing" val="north"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(1450,620)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="wall_power_supply"/>
+      <a name="width" val="4"/>
+    </comp>
     <comp lib="0" loc="(1520,350)" name="Splitter">
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
@@ -64,20 +80,28 @@
       <a name="fanout" val="6"/>
       <a name="incoming" val="6"/>
     </comp>
-    <comp lib="0" loc="(1590,570)" name="Splitter">
+    <comp lib="0" loc="(1590,600)" name="Splitter">
       <a name="appear" val="right"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
     </comp>
-    <comp lib="0" loc="(1800,620)" name="Splitter">
+    <comp lib="0" loc="(1800,650)" name="Splitter">
       <a name="appear" val="right"/>
       <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
     </comp>
-    <comp lib="0" loc="(1840,620)" name="Splitter">
+    <comp lib="0" loc="(1840,650)" name="Splitter">
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
+    </comp>
+    <comp lib="0" loc="(2030,490)" name="Tunnel">
+      <a name="label" val="Keyboard"/>
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(2130,490)" name="Tunnel">
+      <a name="label" val="Mouse"/>
+      <a name="width" val="4"/>
     </comp>
     <comp loc="(1010,320)" name="Voltage_converter"/>
     <comp loc="(1050,130)" name="regulator_current_protection"/>
@@ -92,14 +116,16 @@
       <a name="facing" val="south"/>
     </comp>
     <comp loc="(1590,490)" name="drive_motor"/>
-    <comp loc="(1620,560)" name="LD_CONTROL_SPEED_BOARD_V1"/>
+    <comp loc="(1620,590)" name="LD_CONTROL_SPEED_BOARD_V1"/>
     <comp loc="(1780,210)" name="Fsky_Fsesc_Mini_V6dot7_Pro"/>
     <comp loc="(1810,480)" name="usb_hub"/>
     <comp loc="(1840,400)" name="cervo_motor">
       <a name="facing" val="north"/>
     </comp>
-    <comp loc="(1880,550)" name="Lidar"/>
+    <comp loc="(1880,580)" name="Lidar"/>
     <comp loc="(1930,440)" name="wifi_dongle"/>
+    <comp loc="(2060,550)" name="remote_controler"/>
+    <comp loc="(2200,460)" name="Camera"/>
     <comp loc="(930,150)" name="Battery"/>
     <comp loc="(960,140)" name="connector"/>
     <wire from="(1000,280)" to="(1000,360)"/>
@@ -133,12 +159,15 @@
     <wire from="(1290,530)" to="(1330,530)"/>
     <wire from="(1310,540)" to="(1310,560)"/>
     <wire from="(1310,580)" to="(1330,580)"/>
+    <wire from="(1320,480)" to="(1320,520)"/>
+    <wire from="(1320,520)" to="(1340,520)"/>
     <wire from="(1330,530)" to="(1330,580)"/>
     <wire from="(1340,140)" to="(1390,140)"/>
     <wire from="(1340,160)" to="(1370,160)"/>
-    <wire from="(1350,450)" to="(1350,570)"/>
+    <wire from="(1340,520)" to="(1340,620)"/>
+    <wire from="(1350,450)" to="(1350,600)"/>
     <wire from="(1350,450)" to="(1360,450)"/>
-    <wire from="(1350,570)" to="(1590,570)"/>
+    <wire from="(1350,600)" to="(1590,600)"/>
     <wire from="(1360,480)" to="(1360,550)"/>
     <wire from="(1360,550)" to="(1760,550)"/>
     <wire from="(1370,160)" to="(1370,190)"/>
@@ -152,6 +181,11 @@
     <wire from="(1390,260)" to="(1390,290)"/>
     <wire from="(1390,480)" to="(1390,520)"/>
     <wire from="(1390,520)" to="(1520,520)"/>
+    <wire from="(1450,510)" to="(1450,620)"/>
+    <wire from="(1460,480)" to="(1460,490)"/>
+    <wire from="(1470,480)" to="(1470,490)"/>
+    <wire from="(1480,480)" to="(1480,490)"/>
+    <wire from="(1490,480)" to="(1490,490)"/>
     <wire from="(1520,350)" to="(1520,520)"/>
     <wire from="(1530,430)" to="(1530,520)"/>
     <wire from="(1530,520)" to="(1590,520)"/>
@@ -175,10 +209,10 @@
     <wire from="(1610,370)" to="(1610,380)"/>
     <wire from="(1610,370)" to="(1670,370)"/>
     <wire from="(1610,450)" to="(1610,490)"/>
-    <wire from="(1610,580)" to="(1640,580)"/>
-    <wire from="(1610,590)" to="(1640,590)"/>
-    <wire from="(1610,600)" to="(1640,600)"/>
     <wire from="(1610,610)" to="(1640,610)"/>
+    <wire from="(1610,620)" to="(1640,620)"/>
+    <wire from="(1610,630)" to="(1640,630)"/>
+    <wire from="(1610,640)" to="(1640,640)"/>
     <wire from="(1660,350)" to="(1660,360)"/>
     <wire from="(1660,350)" to="(1710,350)"/>
     <wire from="(1660,450)" to="(1660,490)"/>
@@ -195,10 +229,10 @@
     <wire from="(1720,330)" to="(1810,330)"/>
     <wire from="(1730,340)" to="(1730,370)"/>
     <wire from="(1730,340)" to="(1820,340)"/>
-    <wire from="(1730,580)" to="(1780,580)"/>
-    <wire from="(1730,590)" to="(1780,590)"/>
-    <wire from="(1730,600)" to="(1780,600)"/>
     <wire from="(1730,610)" to="(1780,610)"/>
+    <wire from="(1730,620)" to="(1780,620)"/>
+    <wire from="(1730,630)" to="(1780,630)"/>
+    <wire from="(1730,640)" to="(1780,640)"/>
     <wire from="(1740,140)" to="(1740,240)"/>
     <wire from="(1750,480)" to="(1750,540)"/>
     <wire from="(1750,480)" to="(1790,480)"/>
@@ -208,15 +242,28 @@
     <wire from="(1790,440)" to="(1930,440)"/>
     <wire from="(1800,220)" to="(1800,320)"/>
     <wire from="(1800,220)" to="(1830,220)"/>
-    <wire from="(1800,620)" to="(1840,620)"/>
+    <wire from="(1800,650)" to="(1840,650)"/>
     <wire from="(1810,310)" to="(1810,330)"/>
     <wire from="(1810,310)" to="(1830,310)"/>
     <wire from="(1820,340)" to="(1820,380)"/>
     <wire from="(1820,380)" to="(1830,380)"/>
-    <wire from="(1860,580)" to="(1890,580)"/>
-    <wire from="(1860,590)" to="(1890,590)"/>
-    <wire from="(1860,600)" to="(1890,600)"/>
     <wire from="(1860,610)" to="(1890,610)"/>
+    <wire from="(1860,620)" to="(1890,620)"/>
+    <wire from="(1860,630)" to="(1890,630)"/>
+    <wire from="(1860,640)" to="(1890,640)"/>
+    <wire from="(1910,490)" to="(1910,560)"/>
+    <wire from="(1910,560)" to="(2060,560)"/>
+    <wire from="(1940,490)" to="(1940,530)"/>
+    <wire from="(1940,530)" to="(2120,530)"/>
+    <wire from="(1970,490)" to="(1970,520)"/>
+    <wire from="(1970,520)" to="(2030,520)"/>
+    <wire from="(2000,490)" to="(2030,490)"/>
+    <wire from="(2030,510)" to="(2030,520)"/>
+    <wire from="(2030,510)" to="(2120,510)"/>
+    <wire from="(2120,490)" to="(2120,510)"/>
+    <wire from="(2120,490)" to="(2130,490)"/>
+    <wire from="(2120,520)" to="(2120,530)"/>
+    <wire from="(2120,520)" to="(2200,520)"/>
     <wire from="(930,150)" to="(960,150)"/>
     <wire from="(930,170)" to="(960,170)"/>
   </circuit>
@@ -548,6 +595,7 @@
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="129" y="158">-</text>
       <rect fill="none" height="23" stroke="#000000" width="12" x="104" y="73"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="8" font-weight="bold" text-anchor="middle" x="161" y="67">Enable powering from battery</text>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="9" text-anchor="middle" x="144" y="55">Jetson</text>
       <circ-anchor facing="east" height="6" width="6" x="97" y="47"/>
       <circ-port height="10" pin="230,140" width="10" x="185" y="155"/>
       <circ-port height="10" pin="230,180" width="10" x="185" y="125"/>
@@ -716,9 +764,6 @@
     <a name="simulationFrequency" val="1.0"/>
     <appear>
       <rect fill="none" height="90" stroke="#000000" width="160" x="50" y="41"/>
-      <rect fill="none" height="33" stroke="#000000" width="20" x="61" y="68"/>
-      <rect fill="none" height="30" stroke="#000000" width="20" x="181" y="91"/>
-      <rect fill="none" height="31" stroke="#000000" width="20" x="181" y="50"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="122" y="85">Battery in</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="149" y="62">5v out1</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="143" y="103">5v out2</text>
@@ -785,13 +830,13 @@
     <a name="simulationFrequency" val="1000.0"/>
     <appear>
       <rect fill="none" height="110" stroke="#000000" width="191" x="50" y="41"/>
-      <polyline fill="none" points="230,110 230,101 211,101 211,131 211,141 230,140 231,130" stroke="#000000"/>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="142" y="127">some controll connector</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="141" y="50">Regulator (current protection)</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="74" y="79">+</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="74" y="98">-</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="205" y="68">+</text>
       <text dominant-baseline="central" font-family="SansSerif" font-size="12" text-anchor="middle" x="206" y="88">-</text>
+      <polyline fill="none" points="230,110 230,100 210,100 210,140 230,140 230,130" stroke="#000000"/>
       <circ-anchor facing="east" height="6" width="6" x="47" y="57"/>
       <circ-port height="10" pin="340,120" width="10" x="215" y="85"/>
       <circ-port height="10" pin="340,160" width="10" x="215" y="105"/>
@@ -1005,11 +1050,12 @@
       <ellipse cx="194" cy="65" fill="none" rx="5" ry="5" stroke="#000000"/>
       <ellipse cx="145" cy="14" fill="none" rx="5" ry="5" stroke="#000000"/>
       <polyline fill="none" points="140,15 140,29" stroke="#000000"/>
-      <polyline fill="none" points="151,16 151,30" stroke="#000000"/>
-      <polyline fill="none" points="151,101 151,115" stroke="#000000"/>
+      <polyline fill="none" points="150,15 150,30" stroke="#000000"/>
+      <polyline fill="none" points="150,100 150,114" stroke="#000000"/>
       <polyline fill="none" points="140,100 140,114" stroke="#000000"/>
       <polyline fill="none" points="194,60 180,60" stroke="#000000"/>
-      <polyline fill="none" points="195,71 180,71" stroke="#000000"/>
+      <polyline fill="none" points="194,71 179,71" stroke="#000000"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="8" font-weight="bold" text-anchor="middle" x="146" y="94">DTOF LiDAR</text>
       <circ-anchor facing="east" height="6" width="6" x="37" y="17"/>
       <circ-port height="8" pin="130,100" width="8" x="46" y="46"/>
       <circ-port height="8" pin="130,130" width="8" x="46" y="56"/>
@@ -1050,6 +1096,7 @@
       <path d="M123,31 Q130,14 141,31" fill="none" stroke="#000000"/>
       <path d="M125,31 Q130,17 139,31" fill="none" stroke="#000000"/>
       <path d="M127,32 Q131,20 137,32" fill="none" stroke="#000000"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="8" font-weight="bold" text-anchor="middle" x="107" y="72">cudy</text>
       <circ-anchor facing="east" height="6" width="6" x="47" y="57"/>
       <circ-port height="10" pin="330,130" width="10" x="45" y="55"/>
     </appear>
@@ -1127,5 +1174,83 @@
     <wire from="(410,60)" to="(410,150)"/>
     <wire from="(450,30)" to="(470,30)"/>
     <wire from="(470,30)" to="(470,150)"/>
+  </circuit>
+  <circuit name="remote_controler">
+    <a name="appearance" val="custom"/>
+    <a name="circuit" val="remote_controler"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1000.0"/>
+    <appear>
+      <rect fill="none" height="20" stroke="#000000" width="27" x="140" y="70"/>
+      <rect fill="none" height="6" stroke="#000000" width="16" x="147" y="81"/>
+      <rect fill="none" height="6" stroke="#000000" width="16" x="147" y="72"/>
+      <rect fill="none" height="39" stroke="#000000" width="16" x="167" y="60"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="10" text-anchor="middle" x="230" y="55">logitech</text>
+      <polyline fill="none" points="175,78 169,73 176,79 176,92 181,84 176,79 181,73 176,67 176,79 170,85" stroke="#000000"/>
+      <polyline fill="none" points="194,86 192,84 195,87 195,93 198,90 195,87 198,85 195,82 195,87 192,90" stroke="#000000"/>
+      <path d="M220,70 Q205,48 190,70" fill="none" stroke="#000000"/>
+      <path d="M240,70 Q254,48 270,70" fill="none" stroke="#000000"/>
+      <polyline fill="none" points="220,70 240,70" stroke="#000000"/>
+      <polyline fill="none" points="190,71 190,100" stroke="#000000"/>
+      <polyline fill="none" points="270,70 270,100" stroke="#000000"/>
+      <path d="M190,100 Q196,110 200,100" fill="none" stroke="#000000"/>
+      <path d="M260,100 Q266,110 270,100" fill="none" stroke="#000000"/>
+      <path d="M210,90 Q216,100 221,89" fill="none" stroke="#000000"/>
+      <path d="M240,89 Q246,100 250,90" fill="none" stroke="#000000"/>
+      <path d="M200,100 Q204,83 210,90" fill="none" stroke="#000000"/>
+      <path d="M260,100 Q257,79 250,90" fill="none" stroke="#000000"/>
+      <polyline fill="none" points="221,89 240,89" stroke="#000000"/>
+      <ellipse cx="245" cy="87" fill="none" rx="4" ry="4" stroke="#000000"/>
+      <ellipse cx="255" cy="74" fill="none" rx="8" ry="8" stroke="#000000"/>
+      <ellipse cx="255" cy="70" fill="none" rx="2" ry="2" stroke="#000000"/>
+      <ellipse cx="255" cy="78" fill="none" rx="2" ry="2" stroke="#000000"/>
+      <ellipse cx="259" cy="74" fill="none" rx="2" ry="2" stroke="#000000"/>
+      <ellipse cx="251" cy="74" fill="none" rx="2" ry="2" stroke="#000000"/>
+      <ellipse cx="205" cy="75" fill="none" rx="8" ry="8" stroke="#000000"/>
+      <polygon fill="none" points="199,73 203,73 203,69 206,69 206,73 210,73 210,76 206,76 206,80 203,80 203,76 199,76" stroke="#000000"/>
+      <rect fill="none" height="3" stroke="#000000" width="6" x="217" y="73"/>
+      <rect fill="none" height="3" stroke="#000000" width="6" x="219" y="79"/>
+      <rect fill="none" height="3" stroke="#000000" width="6" x="234" y="79"/>
+      <rect fill="none" height="3" stroke="#000000" width="6" x="237" y="73"/>
+      <ellipse cx="229" cy="77" fill="none" rx="3" ry="2" stroke="#000000"/>
+      <ellipse cx="245" cy="87" fill="none" rx="2" ry="2" stroke="#000000"/>
+      <ellipse cx="215" cy="88" fill="none" rx="4" ry="4" stroke="#000000"/>
+      <ellipse cx="215" cy="88" fill="none" rx="2" ry="2" stroke="#000000"/>
+      <circ-anchor facing="east" height="6" width="6" x="137" y="67"/>
+      <circ-port height="8" pin="470,270" width="8" x="136" y="76"/>
+    </appear>
+    <comp lib="0" loc="(470,270)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="bluetooth_dongle"/>
+      <a name="width" val="4"/>
+    </comp>
+  </circuit>
+  <circuit name="Camera">
+    <a name="appearance" val="custom"/>
+    <a name="circuit" val="Camera"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1000.0"/>
+    <appear>
+      <rect fill="none" height="30" stroke="#000000" width="120" x="70" y="20"/>
+      <rect fill="none" height="30" stroke="#000000" width="30" x="70" y="67"/>
+      <rect fill="none" height="8" stroke="#000000" width="14" x="80" y="72"/>
+      <rect fill="none" height="8" stroke="#000000" width="14" x="80" y="84"/>
+      <rect fill="none" height="36" stroke="#000000" width="6" x="100" y="64"/>
+      <rect fill="none" height="11" stroke="#000000" width="3" x="106" y="77"/>
+      <polygon fill="none" points="109,79 130,79 130,54 135,54 135,86 109,86" stroke="#000000"/>
+      <rect fill="none" height="4" stroke="#000000" width="11" x="127" y="50"/>
+      <rect fill="none" height="24" stroke="#000000" width="112" x="74" y="23"/>
+      <ellipse cx="82" cy="30" fill="none" rx="5" ry="4" stroke="#000000"/>
+      <ellipse cx="131" cy="30" fill="none" rx="5" ry="4" stroke="#000000"/>
+      <ellipse cx="178" cy="30" fill="none" rx="5" ry="4" stroke="#000000"/>
+      <text dominant-baseline="central" font-family="SansSerif" font-size="9" text-anchor="middle" x="128" y="40">3D depth camera</text>
+      <circ-anchor facing="east" height="6" width="6" x="67" y="17"/>
+      <circ-port height="8" pin="450,300" width="8" x="66" y="76"/>
+    </appear>
+    <comp lib="0" loc="(450,300)" name="Pin">
+      <a name="appearance" val="classic"/>
+      <a name="label" val="type_c_in"/>
+      <a name="width" val="4"/>
+    </comp>
   </circuit>
 </project>
