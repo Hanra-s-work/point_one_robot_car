@@ -99,9 +99,10 @@ create_environement:
 
 # Install the python dependencies
 install_dependencies: create_environement
-	$(SILENT) . $(ENV_NAME)/bin/activate && \
-	echo -e "$(C_CYAN)Upgrading pip$(C_RESET)" &&\
+	$(SILENT) echo -e "$(C_CYAN)Upgrading pip$(C_RESET)" &&\
 	$(CC) -m pip install --upgrade pip && \
+	. $(ENV_NAME)/bin/activate && \
+	$(MY_PIP_BIN) install --upgrade pip && \
 \
 	$(MY_PIP_BIN) list && \
 	echo -e "$(C_CYAN)Installing python dependencies$(C_RESET)" &&\
