@@ -1,0 +1,27 @@
+# Compiled Object files
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.a
+
+# Executables & Binarie
+*.out
+unit_tests
+inference_test
+
+# dephtai
+depthai-core
+depthai-python
+
+# CMake
+cmake-build-debug
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+.cmake
+build
