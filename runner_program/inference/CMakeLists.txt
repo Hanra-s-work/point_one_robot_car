@@ -19,11 +19,7 @@ add_library(
         src/setup_camera.cpp
 )
 
-target_link_libraries(${libName} PRIVATE depthai::opencv)
-
-set_target_properties(
-        ${libName} PROPERTIES LINK_FLAGS "-ldepthai-core -ldepthai-opencv -ldepthai-ressouces"
-)
+target_link_libraries(${libName} PRIVATE depthai::core depthai::depthai-resources depthai::opencv)
 
 set_target_properties(
         ${libName} PROPERTIES COMPILE_FLAGS "-Wall -Wextra -Wpedantic"

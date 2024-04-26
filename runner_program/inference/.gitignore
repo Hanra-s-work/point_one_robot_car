@@ -13,10 +13,6 @@
 unit_tests
 inference_test
 
-# dephtai
-depthai-core
-depthai-python
-
 # CMake
 cmake-build-debug
 CMakeCache.txt
