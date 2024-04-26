@@ -11,6 +11,7 @@ if [ $? -eq 0 ]; then
   sudo apt-get update
   sudo apt-get install -y libnop-dev
   sudo apt-get install -y nlohmann-json3-dev
+  sudo apt-get install -y libusb-dev
 else echo $prompt | grep -q '^sudo:'
   echo "Script must be run with sudo rights"
 fi
