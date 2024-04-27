@@ -3,8 +3,8 @@
 #include <cmath>
 #include <vector>
 #include <random>
-#include "alglib/src/stdafx.h"
-#include "alglib/src/interpolation.h"
+#include "alglib/stdafx.h"
+#include "alglib/interpolation.h"
 // #include "matplotlibcpp.h"
 
 // namespace plt = matplotlibcpp;
