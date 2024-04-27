@@ -175,3 +175,6 @@ cython_debug/
 # Project binaries
 runner
 trainer
+
+# Alglib files
+*.gch

@@ -1,0 +1,18 @@
+// Python version of spline
+numpy : pip install numpy
+matplotlib : pip install matplotlib
+spicy : pip install scipy
+
+// Install matplotlib for cpp (only for visualisation and won't be used for the control)
+git clone https://github.com/lava/matplotlib-cpp.git
+cd matplotlib-cpp
+mkdir build
+cd build
+sudo dnf install python3
+sudo dnf install python3-devel
+cmake ..
+make
+sudo make install
+
+// Compil command
+g++ spline.cpp alglib/*.cpp -I/usr/include/python[Python version] -I/home/[Username]/.local/lib/python[Python version]/site-packages/numpy/core/include -L/usr/lib/python[Python version]/config-[Python version]-x86_64-linux-gnu -lpython[Python version]
