@@ -29,7 +29,7 @@ def run_motor_using_with():
 # 30 ° left  = 0 
 # a function to show how to use the class as a static object.
 # angle -30 : 30
-# commande : (angle/30)*50 /100
+# commande : ((angle+30)/30)*50 /100
 def run_motor_as_object():
     motor = VESC(serial_port=serial_port)
     print("Firmware: ", motor.get_firmware_version())
