@@ -132,6 +132,7 @@ wenv/
 lenv/
 menv/
 trainer_env/
+srunner_env/
 ENV/
 env.bak/
 venv.bak/

@@ -31,7 +31,7 @@ LOG_LEVEL	=	WARN
 
 # The name of the python environement that will be used
 
-ENV_NAME	=	trainer_env
+ENV_NAME	=	srunner_env
 
 # The location in which the dependencies used during the build process
 # will be stored
