@@ -55,7 +55,7 @@ def time_get_values():
 
 
 if __name__ == '__main__':
-    #run_motor_using_with()
-    run_motor_as_object()
+    run_motor_using_with()
+    #run_motor_as_object()
     #time_get_values()
 
