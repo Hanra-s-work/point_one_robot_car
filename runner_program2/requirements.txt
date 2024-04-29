@@ -2,3 +2,5 @@ numpy == 1.26.4
 pyserial == 3.5
 pyvesc == 1.0.5
 pythoncrc == 1.21
+xalglib == 3.16.0
+# pyvesc-fix == 1.0.0
