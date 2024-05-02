@@ -175,6 +175,7 @@ cython_debug/
 
 # Project binaries
 runner
+r2
 trainer
 
 # Alglib files
