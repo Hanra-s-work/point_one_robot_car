@@ -1,6 +1,6 @@
 import time
 # from pyvesc import VESC
-from pyvesc import VESCMessage as VESC
+from pyvesc import VESC
 import sys
 sys.path.append("C:/Users/NBizar OUARTI/Documents/VESC_motor/PyVESC/")
 # sys.path.append(
@@ -10,7 +10,7 @@ sys.path.append("C:/Users/NBizar OUARTI/Documents/VESC_motor/PyVESC/")
 # serial port that VESC is connected to. Something like "COM3" for windows and as below for linux/mac
 serial_port = '/dev/serial/by-id/usb-STMicroelectronics_ChibiOS_RT_Virtual_COM_Port_301-if00'
 serial_port = 'COM9'
-#serial_port = 'COM15'
+# serial_port = 'COM15'
 
 # a function to show how to use the class with a with-statement
 
@@ -35,7 +35,7 @@ def run_motor_using_with():
 # 30 ° left  = 0
 # a function to show how to use the class as a static object.
 # angle -30 : 30
-# commande : ((angle+30)/30)*50 /100
+# commande : ((angle - input_min) / (input_max - input_min)) * (output_max - output_min) + output_min
 def run_motor_as_object():
     motor = VESC(serial_port=serial_port)
     print("Firmware: ", motor.get_firmware_version())
@@ -62,6 +62,5 @@ def time_get_values():
 
 if __name__ == '__main__':
     run_motor_using_with()
-    #run_motor_as_object()
-    #time_get_values()
-
+    # run_motor_as_object()
+    # time_get_values()
