@@ -5,6 +5,7 @@
 # test_main.py
 ##
 
+import sys
 import unittest
 from unittest import mock
 import src.main as MI
