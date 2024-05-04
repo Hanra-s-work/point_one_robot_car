@@ -49,20 +49,28 @@ class MotorController:
         """ Set the speed of the motor """
         self.motor.set_duty_cycle(speed)
 
-    def _smooth_it_out(self, old_speed: int, new_speed: int) -> None:
+    def _smooth_it_out(self, old_speed: float, new_speed: float) -> None:
         """ Function in charge of slowing the movement """
         for i in range(old_speed, new_speed, -0.1):
             self._set_speed(i)
             time.sleep(self.command_delay)
 
-    def run(self, speed: int, smooth_out: bool = True) -> bool:
+    def _smooth_it_in(self, old_speed: float, new_speed: float) -> None:
+        """ Function in charge of slowly speeding up the car """
+        for i in range(old_speed, new_speed):
+            self._set_speed(i)
+            time.sleep(self.command_delay)
+
+    def run(self, speed: int, smooth_out: bool = True, smooth_in: bool = False) -> bool:
         """ The function in charge of controling the speed of the car """
         if speed < 0:
             print("Speed cannot be negative")
             return False
         if speed > self.speed:
-            self.speed = speed
-            self._set_speed(speed)
+            if smooth_in is True:
+                self._smooth_it_in(self.speed, speed)
+            else:
+                self._set_speed(speed)
             return True
         if smooth_out is True:
             self._smooth_it_out(self.speed, speed)
