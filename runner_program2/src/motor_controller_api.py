@@ -5,7 +5,9 @@
 # motor_controller_api.py
 ##
 
+import sys
 import time
+from colourise_output import ColouriseOutput
 from pyvesc import VESC
 
 LEFT = 1
@@ -15,7 +17,7 @@ RIGHT = -1
 class MotorController:
     """ The class in charge of controling the movements of the motor """
 
-    def __init__(self, serial_port: str = "/dev/serial/by-id/usb-STMicroelectronics_ChibiOS_RT_Virtual_COM_Port_301-if00", success: int = 0, error: int = 84) -> None:
+    def __init__(self, serial_port: str = "/dev/serial/by-id/usb-STMicroelectronics_ChibiOS_RT_Virtual_COM_Port_301-if00", success: int = 0, error: int = 84, debug: bool = False) -> None:
         # Motor management
         self.serial_port = serial_port
         self.motor = VESC(serial_port=serial_port)
@@ -37,6 +39,19 @@ class MotorController:
         self.angle_middle = 0
         self.wheels_straight = True
         self.wheel_radius = 4  # cm
+        # Debugging functions
+        self.debug = debug
+        # Adding colour to the mix
+        self.co = ColouriseOutput()
+        self.co.init_pallet()
+        self.reset_colour = "\033[0m"
+        self.info_colour = "\033[01;96m"
+        self.error_colour = "\033[01;91m"
+
+    def _print_debug(self, string: str) -> None:
+        """ Function in charge of displaying the debug for the class """
+        if self.debug is True:
+            print(f"(mc) {string}", file=sys.stderr)
 
     def reload(self, serial_port="") -> int:
         """ A function to reload the controller """
@@ -64,19 +79,33 @@ class MotorController:
     def run(self, speed: int, smooth_out: bool = True, smooth_in: bool = False) -> bool:
         """ The function in charge of controling the speed of the car """
         if speed < 0:
-            print("Speed cannot be negative")
-            return False
+            self._print_debug(
+                f"{self.info_colour}INFO:{self.reset_colour} going into reverse"
+            )
+        else:
+            self._print_debug(
+                f"{self.info_colour}INFO:{self.reset_colour} going forward"
+            )
         if speed > self.speed:
             if smooth_in is True:
+                self._print_debug(
+                    f"{self.info_colour}INFO:{self.reset_colour} smoothing in"
+                )
                 self._smooth_it_in(self.speed, speed)
             else:
                 self._set_speed(speed)
             return True
         if smooth_out is True:
+            self._print_debug(
+                f"{self.info_colour}INFO: {self.reset_colour} smoothing out"
+            )
             self._smooth_it_out(self.speed, speed)
         else:
             self._set_speed(speed)
         self.speed = speed
+        self._print_debug(
+            f"{self.info_colour}INFO:{self.reset_colour} speed is now set to {self.speed}"
+        )
         return True
 
     def _turn_wheels(self, angle: float) -> bool:
@@ -88,10 +117,13 @@ class MotorController:
         """ The function in charge of changing """
         if angle < self.angle_min or angle > self.angle_max:
             print(
-                f"Angle range must be between {self.angle_min} and {self.angle_max}"
+                f"{self.error_colour}ERROR:{self.reset_colour} Angle range must be between {self.angle_min} and {self.angle_max}"
             )
             return False
         if angle == 0:
+            self._print_debug(
+                f"{self.info_colour}INFO: {self.reset_colour} Wheels are now straight"
+            )
             self.wheels_straight = True
             self.angle = 50
         else:
@@ -118,3 +150,12 @@ class MotorController:
     def get_speed(self) -> float:
         """ Get the current speed of the car """
         return self.speed
+
+    def abort_mission(self) -> bool:
+        """ Function in charge of stopping the car completely (in case of an emergency) """
+        self._print_debug(
+            f"{self.info_colour}INFO: {self.reset_colour} Aborting mission"
+        )
+        if self.run(0, False, False) is not True or self.turn(0) is not True:
+            return False
+        return True
