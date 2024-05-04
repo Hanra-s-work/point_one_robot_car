@@ -22,13 +22,14 @@ class MotorController:
         # Status codes
         self.error = error
         self.success = success
-        # Command managment
+        # Command management
         self.command_delay = 0.01
         # Motor speed
         self.speed = 0
         self.running = False
         # Motor angle management
         self.angle = 0
+        self.raw_angle = 0
         self.angle_max = 30
         self.angle_min = -30
         self.range_min = 0
@@ -91,4 +92,21 @@ class MotorController:
                 (angle - self.angle_min) / (self.angle_max - self.angle_min)
             ) * (self.range_max - self.range_max) + self.range_min
         self._turn_wheels(self.angle)
+        self.raw_angle = angle
         return True
+
+    def is_running(self) -> bool:
+        """ Check if the car is moving """
+        return self.running
+
+    def is_straight(self) -> bool:
+        """ Check if the angle of the wheels is straight (that they are facing forward) """
+        return self.wheels_straight
+
+    def get_angle(self) -> float:
+        """ Get the current angle of the wheels """
+        return self.raw_angle
+
+    def get_speed(self) -> float:
+        """ Get the current speed of the car """
+        return self.speed
