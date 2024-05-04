@@ -42,7 +42,7 @@ def procedural():
              9350.1, # C2
              8500.2, # D2
              6600.2, # E2
-             5750, # F2 
+             5750, # F2
              5500, # G2
              5500.1, # H2
              5750.1, # I2
@@ -101,12 +101,18 @@ def procedural():
     t = np.arange(len(x_raw))
     x_cubic = CubicSpline(t, x_raw)
     y_cubic = CubicSpline(t, y_raw)
-    
+
     x_first_derivative = x_cubic(t, 1)
     x_second_derivative = x_cubic(t, 2)
-    
+
     y_first_derivative = y_cubic(t, 1)
     y_second_derivative = y_cubic(t, 2)
+
+    r = np.abs((x_first_derivative**2 + y_first_derivative**2)**(3/2) / (x_first_derivative * y_second_derivative - y_first_derivative * x_second_derivative))
+
+    angle = np.arcsin(325 / r) - 20
+
+    vitesse = angle * r
 
     # plt.plot(x_raw, y_raw, 'o-', label='data')
     # plt.plot(x_first_derivative, y_first_derivative, label="S'")
