@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="point-one-robot-car-inference"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\depthai-core\;CMake Files\depthai-core\build\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\home\;CMake Files\..\..\..\..\..\..\..\home\mordorak\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\BZip2\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\FP16\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\archive_static\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\lzma\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\ZLIB\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\spdlog\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\nlohmann_json\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\libnop\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\dependencies\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\dependencies\lib\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\dependencies\lib\cmake\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\dependencies\lib\cmake\usb-1.0\;CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\backward\;CMake Files\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="robot_car_inference.so">
+				<Option output="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/librobot_car_inference.so.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEPTHAI_TARGET_CORE"/>
+					<Add option="-DJSON_USE_IMPLICIT_CONVERSIONS=1"/>
+					<Add option="-DDEPTHAI_TARGET_OPENCV"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include/depthai"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/shared/depthai-shared/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/shared/depthai-bootloader-shared/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/shared/depthai-shared/3rdparty"/>
+					<Add directory="/home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/build/_cmrc/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 robot_car_inference.so"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="robot_car_inference.so/fast">
+				<Option output="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/librobot_car_inference.so.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEPTHAI_TARGET_CORE"/>
+					<Add option="-DJSON_USE_IMPLICIT_CONVERSIONS=1"/>
+					<Add option="-DDEPTHAI_TARGET_OPENCV"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include/depthai"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/shared/depthai-shared/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/shared/depthai-bootloader-shared/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/shared/depthai-shared/3rdparty"/>
+					<Add directory="/home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/build/_cmrc/include"/>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 robot_car_inference.so/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inference_test">
+				<Option output="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/inference_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include/depthai"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 inference_test"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="inference_test/fast">
+				<Option output="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/inference_test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include/depthai"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 inference_test/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unit_tests">
+				<Option output="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/unit_tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include/depthai"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_tests"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="unit_tests/fast">
+				<Option output="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/unit_tests" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/include"/>
+					<Add directory="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/include/depthai"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_tests/fast"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j12 -f &quot;/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/src/main.cpp">
+			<Option target="inference_test"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/src/setup_camera.cpp">
+			<Option target="robot_car_inference.so"/>
+			<Option target="inference_test"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/tests/unit_tests.cpp">
+			<Option target="unit_tests"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/build/depthaiConfig.cmake">
+			<Option virtualFolder="CMake Files\depthai-core\build\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/build/depthaiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\depthai-core\build\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/build/depthaiDependencies.cmake">
+			<Option virtualFolder="CMake Files\depthai-core\build\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/depthai-core/build/depthaiTargets.cmake">
+			<Option virtualFolder="CMake Files\depthai-core\build\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/BZip2/BZip2Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\BZip2\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/BZip2/BZip2ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\BZip2\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/BZip2/BZip2Targets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\BZip2\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/BZip2/BZip2Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\BZip2\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/FP16/FP16Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\FP16\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/FP16/FP16Targets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\FP16\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/archive_static/archive_staticConfig-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\archive_static\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/archive_static/archive_staticConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\archive_static\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/lzma/lzmaConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\lzma\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/lzma/lzmaConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\lzma\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/lzma/lzmaTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\lzma\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/lzma/lzmaTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\lzma\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/ZLIB/ZLIBConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\ZLIB\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/ZLIB/ZLIBConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\ZLIB\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/ZLIB/ZLIBTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\ZLIB\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/ZLIB/ZLIBTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\ZLIB\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/spdlog/spdlogConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\spdlog\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/spdlog/spdlogConfigTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\spdlog\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/spdlog/spdlogConfigTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\spdlog\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/spdlog/spdlogConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\spdlog\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/libnop/libnopConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\libnop\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/XLink/XLinkConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/XLink/XLinkDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/XLink/XLinkTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/XLink/XLinkTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/XLink/dependencies/lib/cmake/usb-1.0/usb-1.0Config-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\dependencies\lib\cmake\usb-1.0\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/cmake/XLink/dependencies/lib/cmake/usb-1.0/usb-1.0Config.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\cmake\XLink\dependencies\lib\cmake\usb-1.0\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../home/mordorak/.hunter/_Base/cb0ea1f/21498a3/69d66b5/Install/lib/backward/BackwardConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\home\mordorak\.hunter\_Base\cb0ea1f\21498a3\69d66b5\Install\lib\backward\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/../../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

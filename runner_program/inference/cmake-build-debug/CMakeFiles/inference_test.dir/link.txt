@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/inference_test.dir/src/main.cpp.o CMakeFiles/inference_test.dir/src/setup_camera.cpp.o -o ../inference_test  -Wl,-rpath,/mnt/i/dev/hub/point_one_robot_car/runner_program/inference/cmake-build-debug librobot_car_inference.so.so 
