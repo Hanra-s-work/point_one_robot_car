@@ -8,7 +8,7 @@
 import sys
 import time
 from colourise_output import ColouriseOutput
-from pyvesc import VESC
+from pyvesc.VESC import VESC
 
 LEFT = 1
 RIGHT = -1
@@ -163,3 +163,15 @@ class MotorController:
     def emergency_stop(self) -> bool:
         """ Function in charge of stopping the car completely (in case of an emergency) """
         return self.abort_mission()
+
+
+if __name__ == "__main__":
+    MI = MotorController(
+        "COM15",
+        success=0,
+        error=0,
+        debug=False
+    )
+    MI.run(10, False, False)
+    time.sleep(20)
+    MI.run(0, False, False)
