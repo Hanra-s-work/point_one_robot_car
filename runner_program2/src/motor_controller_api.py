@@ -62,22 +62,41 @@ class MotorController:
 
     def _set_speed(self, speed: float) -> None:
         """ Set the speed of the motor """
-        self.motor.set_duty_cycle(speed)
+        if (speed == 0):
+            self.motor.set_rpm(0)
+        else:
+            self.motor.set_duty_cycle(speed)
 
     def _smooth_it_out(self, old_speed: float, new_speed: float) -> None:
         """ Function in charge of slowing the movement """
-        for i in range(old_speed, new_speed, -0.1):
+        i = new_speed
+        while i > old_speed:
+            self._print_debug(
+                f"{self.info_colour}INFO:{self.reset_colour} i = {i}"
+            )
             self._set_speed(i)
             time.sleep(self.command_delay)
+            i -= 0.01
 
     def _smooth_it_in(self, old_speed: float, new_speed: float) -> None:
         """ Function in charge of slowly speeding up the car """
-        for i in range(old_speed, new_speed):
+        i = new_speed
+        while i > old_speed:
+            self._print_debug(
+                f"{self.info_colour}INFO:{self.reset_colour} i = {i}"
+            )
             self._set_speed(i)
             time.sleep(self.command_delay)
+            i += 0.01
 
-    def run(self, speed: int, smooth_out: bool = True, smooth_in: bool = False) -> bool:
-        """ The function in charge of controling the speed of the car """
+    def run(self, speed: float = 0.02, smooth_out: bool = True, smooth_in: bool = False) -> bool:
+        """
+          The function in charge of controling the speed of the car 
+          The maximum value is 0.1 (move forward)
+          The minimum value is -0.1 (move backwards)
+          The center value is 0 (Stop position move)
+          The step to be used is 0.01
+        """
         if speed < 0:
             self._print_debug(
                 f"{self.info_colour}INFO:{self.reset_colour} going into reverse"
@@ -151,6 +170,11 @@ class MotorController:
         """ Get the current speed of the car """
         return self.speed
 
+    def stop_car(self) -> bool:
+        """ Stop the infinite loop of the controller """
+        self.motor.stop_heartbeat()
+        return True
+
     def abort_mission(self) -> bool:
         """ Function in charge of stopping the car completely (in case of an emergency) """
         self._print_debug(
@@ -158,7 +182,7 @@ class MotorController:
         )
         if self.run(0, False, False) is not True or self.turn(0) is not True:
             return False
-        return True
+        return self.stop_car()
 
     def emergency_stop(self) -> bool:
         """ Function in charge of stopping the car completely (in case of an emergency) """
@@ -172,6 +196,17 @@ if __name__ == "__main__":
         error=0,
         debug=False
     )
-    MI.run(10, False, False)
-    time.sleep(20)
+    MI.run(0.1, False, False)
+
+    time.sleep(0.1)
+    print("Firmware: ", MI.motor.get_firmware_version())
+    time.sleep(0.1)
+    print(f"measurements = {dir(MI.motor.get_measurements())}")
+    time.sleep(5)
     MI.run(0, False, False)
+    time.sleep(0.5)
+    MI.run(-0.1, False, False)
+    time.sleep(5)
+    MI.run(0, False, False)
+    MI.stop_car()
+    # exit(0)
