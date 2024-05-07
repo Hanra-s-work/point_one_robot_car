@@ -7,7 +7,7 @@
 
 import numpy as np
 from scipy.interpolate import CubicSpline
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 # import xalglib
 
 def procedural():
@@ -99,14 +99,17 @@ def procedural():
              6000, # P2
              6500] # Q2
     t = np.arange(len(x_raw))
+    t2 = np.linspace(0,len(x_raw), 200)
+
+    # print(t2)
     x_cubic = CubicSpline(t, x_raw)
     y_cubic = CubicSpline(t, y_raw)
 
-    x_first_derivative = x_cubic(t, 1)
-    x_second_derivative = x_cubic(t, 2)
+    x_first_derivative = x_cubic(t2, 1)
+    x_second_derivative = x_cubic(t2, 2)
 
-    y_first_derivative = y_cubic(t, 1)
-    y_second_derivative = y_cubic(t, 2)
+    y_first_derivative = y_cubic(t2, 1)
+    y_second_derivative = y_cubic(t2, 2)
 
     r = np.abs((x_first_derivative**2 + y_first_derivative**2)**(3/2) / (x_first_derivative * y_second_derivative - y_first_derivative * x_second_derivative))
 
@@ -114,15 +117,27 @@ def procedural():
 
     vitesse = angle * r
 
-    # plt.plot(x_raw, y_raw, 'o-', label='data')
-    # plt.plot(x_first_derivative, y_first_derivative, label="S'")
-    # plt.plot(x_second_derivative, y_second_derivative, label="S''")
-    # plt.xlabel('x')
-    # plt.ylabel('y')
-    # plt.title('Interpolation Cubique et ses dérivées')
-    # plt.legend()
-    # plt.grid(True)
-    # plt.show()
+    plt.plot(x_cubic(t2), y_cubic(t2), 'o-', label='data')
+    plt.plot(x_first_derivative, y_first_derivative, label="S'")
+    plt.plot(x_second_derivative, y_second_derivative, label="S''")
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Interpolation Cubique et ses dérivées')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+    
+    
+    plt.plot(x_cubic(t2), 'o-', label='data')
+    plt.plot(40000+angle*2000,  label="angl")
+    plt.plot(vitesse/1000, label="vitesse")
+    plt.xlabel('t2')
+    plt.ylabel('X')
+    plt.title('Interpolation Cubique et ses dérivées')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+    
 
-# if __name__ == "__main__":
-#     procedural()
+if __name__ == "__main__":
+    procedural()
