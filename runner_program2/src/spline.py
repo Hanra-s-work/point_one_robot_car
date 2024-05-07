@@ -10,6 +10,22 @@ from scipy.interpolate import CubicSpline
 import matplotlib.pyplot as plt
 # import xalglib
 
+eps = 10e-7
+
+def Rayon_Courbure(x1,y1,x2,y2):
+
+    return ((x1**2 + y1**2)**(3/2) / (x1 * y2 - y1 * x2+ eps))
+
+# Rc rayon de courbure
+# WB Wheel base distance entre le centre des 2 roues
+# en mm
+def angle_virage(Rc, WB= 325,larg_roues =20):
+    inv_angle= WB / (Rc - larg_roues)
+    inv_angle= np.clip(inv_angle, -1,1)
+    
+    return np.arcsin(inv_angle)
+    
+
 def procedural():
     x_raw = [8500, # A
              5000, # B
@@ -54,6 +70,7 @@ def procedural():
              9500.2, # O2
              9500.3, # P2
              9350.3] # Q2
+             
 
     y_raw = [7000, # A
              7000, # B
@@ -98,8 +115,10 @@ def procedural():
              5424.5, # O2
              6000, # P2
              6500] # Q2
+              # A
+             
     t = np.arange(len(x_raw))
-    t2 = np.linspace(0,len(x_raw), 200)
+    t2 = np.linspace(0,len(x_raw), 100)
 
     # print(t2)
     x_cubic = CubicSpline(t, x_raw)
@@ -111,11 +130,13 @@ def procedural():
     y_first_derivative = y_cubic(t2, 1)
     y_second_derivative = y_cubic(t2, 2)
 
-    r = np.abs((x_first_derivative**2 + y_first_derivative**2)**(3/2) / (x_first_derivative * y_second_derivative - y_first_derivative * x_second_derivative))
-
-    angle = np.arcsin(325 / r) - 20
-
-    vitesse = angle * r
+    
+    r = Rayon_Courbure(x_first_derivative,y_first_derivative,x_second_derivative,y_second_derivative)
+    
+    angle = angle_virage(r) 
+    alpha= 0.5# paramètres à régler
+    vitesse_minimale= 20 # rpm
+    vitesse = vitesse_minimale+ alpha * np.abs(r)
 
     plt.plot(x_cubic(t2), y_cubic(t2), 'o-', label='data')
     plt.plot(x_first_derivative, y_first_derivative, label="S'")
@@ -128,9 +149,10 @@ def procedural():
     plt.show()
     
     
-    plt.plot(x_cubic(t2), 'o-', label='data')
-    plt.plot(40000+angle*2000,  label="angl")
-    plt.plot(vitesse/1000, label="vitesse")
+    plt.plot(x_cubic(t2), 'o-', label='X')
+    plt.plot(y_cubic(t2), 'o-', label='Y')
+    plt.plot(angle*2000,  label="angl")
+    plt.plot(vitesse/20, label="vitesse")
     plt.xlabel('t2')
     plt.ylabel('X')
     plt.title('Interpolation Cubique et ses dérivées')
