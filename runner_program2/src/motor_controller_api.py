@@ -220,20 +220,20 @@ if __name__ == "__main__":
         "COM15",
         success=0,
         error=0,
-        debug=True
+        debug=False
     )
-    # MI.run(0.1, False, False)  # Move forward full speed
-    # time.sleep(0.1)
+    MI.run(0.02, False, False)  # Move forward full speed
+    time.sleep(0.1)
     # # Get the firmware version
-    # print("Firmware: ", MI.motor.get_firmware_version())
-    # time.sleep(0.1)
-    # print(f"measurements = {dir(MI.motor.get_measurements())}")
-    # time.sleep(5)
-    # MI.run(0, False, False)  # Stop the car
-    # time.sleep(0.5)
-    # MI.run(-0.1, False, False)  # Move backward full speed
-    # time.sleep(5)
-    # MI.run(0, False, False)  # Stop the car
+    # # print("Firmware: ", MI.motor.get_firmware_version())
+    time.sleep(0.1)
+    # # print(f"measurements = {dir(MI.motor.get_measurements())}")
+    time.sleep(5)
+    MI.run(0, False, False)  # Stop the car
+    time.sleep(0.5)
+    MI.run(-0.02, False, False)  # Move backward full speed
+    time.sleep(5)
+    MI.run(0, False, False)  # Stop the car
     print("Bla Bla")
     i = -30
     while i < 30:
