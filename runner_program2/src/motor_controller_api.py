@@ -35,7 +35,7 @@ class MotorController:
         self.angle_max = 30
         self.angle_min = -30
         self.range_min = 0
-        self.range_max = 100
+        self.range_max = 1
         self.angle_middle = 0
         self.wheels_straight = True
         self.wheel_radius = 4  # cm
@@ -47,6 +47,9 @@ class MotorController:
         self.reset_colour = "\033[0m"
         self.info_colour = "\033[01;96m"
         self.error_colour = "\033[01;91m"
+        # Initialising the controller so that functions can be run
+        time.sleep(0.5)
+        self.run(0, False, False)
 
     def _print_debug(self, string: str) -> None:
         """ Function in charge of displaying the debug for the class """
@@ -58,6 +61,8 @@ class MotorController:
         if serial_port != "":
             self.serial_port = serial_port
         self.motor = VESC(serial_port=serial_port)
+        time.sleep(0.5)
+        self.run(0, False, False)
         return self.success
 
     def _set_speed(self, speed: float) -> None:
@@ -66,6 +71,7 @@ class MotorController:
             self.motor.set_rpm(0)
         else:
             self.motor.set_duty_cycle(speed)
+        time.sleep(self.command_delay)
 
     def _smooth_it_out(self, old_speed: float, new_speed: float) -> None:
         """ Function in charge of slowing the movement """
@@ -129,11 +135,24 @@ class MotorController:
 
     def _turn_wheels(self, angle: float) -> bool:
         """ The function that does the calls to the motor in charge of turning the wheels """
+        self._print_debug(
+            f"{self.info_colour}INFO:{self.reset_colour} angle = {angle}"
+        )
         self.motor.set_servo(angle)
-        self.motor.stop_heartbeat()
+        time.sleep(self.command_delay)
 
     def turn(self, angle: float) -> bool:
-        """ The function in charge of changing """
+        """ 
+        The function in charge of changing the angle of the wheels
+        The minimum value is -30
+        The maximum value is 30
+        The center value is 0
+        The Step is 1.0 or smaller
+        """
+        angle = float(angle)
+        self._print_debug(
+            f"{self.info_colour}INFO:{self.reset_colour} raw_angle = {angle}"
+        )
         if angle < self.angle_min or angle > self.angle_max:
             print(
                 f"{self.error_colour}ERROR:{self.reset_colour} Angle range must be between {self.angle_min} and {self.angle_max}"
@@ -144,7 +163,7 @@ class MotorController:
                 f"{self.info_colour}INFO: {self.reset_colour} Wheels are now straight"
             )
             self.wheels_straight = True
-            self.angle = 50
+            self.angle = 0.5
         else:
             self.wheels_straight = False
             self.angle = (
@@ -171,7 +190,10 @@ class MotorController:
         return self.speed
 
     def stop_car(self) -> bool:
-        """ Stop the infinite loop of the controller """
+        """ 
+        Stop the infinite loop of the controller 
+        But, you can start it again by using the reload function
+        """
         self.motor.stop_heartbeat()
         return True
 
@@ -190,23 +212,39 @@ class MotorController:
 
 
 if __name__ == "__main__":
+    CO = ColouriseOutput()
+    CO.init_pallet()
     MI = MotorController(
         "COM15",
         success=0,
         error=0,
-        debug=False
+        debug=True
     )
-    MI.run(0.1, False, False)
-
-    time.sleep(0.1)
-    print("Firmware: ", MI.motor.get_firmware_version())
-    time.sleep(0.1)
-    print(f"measurements = {dir(MI.motor.get_measurements())}")
-    time.sleep(5)
-    MI.run(0, False, False)
-    time.sleep(0.5)
-    MI.run(-0.1, False, False)
-    time.sleep(5)
-    MI.run(0, False, False)
-    MI.stop_car()
-    # exit(0)
+    # MI.run(0.1, False, False)  # Move forward full speed
+    # time.sleep(0.1)
+    # # Get the firmware version
+    # print("Firmware: ", MI.motor.get_firmware_version())
+    # time.sleep(0.1)
+    # print(f"measurements = {dir(MI.motor.get_measurements())}")
+    # time.sleep(5)
+    # MI.run(0, False, False)  # Stop the car
+    # time.sleep(0.5)
+    # MI.run(-0.1, False, False)  # Move backward full speed
+    # time.sleep(5)
+    # MI.run(0, False, False)  # Stop the car
+    print("Bla Bla")
+    i = -30
+    while i < 30:
+        MI.turn(i)  # Turn the wheels
+        time.sleep(0.5)
+        i += 1
+    print("Turning the other way")
+    i = 30
+    while i > -30:
+        MI.turn(i)  # Turn the wheels
+        time.sleep(0.5)
+        i -= 1
+    print("Resetting")
+    MI.turn(0)  # Set the angle to the center
+    MI.stop_car()  # Stop the controller
+    CO.unload_ressources()
