@@ -159,3 +159,7 @@ class MotorController:
         if self.run(0, False, False) is not True or self.turn(0) is not True:
             return False
         return True
+
+    def emergency_stop(self) -> bool:
+        """ Function in charge of stopping the car completely (in case of an emergency) """
+        return self.abort_mission()
