@@ -144,11 +144,15 @@ class MotorController:
     def turn(self, angle: float) -> bool:
         """ 
         The function in charge of changing the angle of the wheels
-        The minimum value is -30
+        The minimum value is -24
         The maximum value is 30
         The center value is 0
-        The Step is 1.0 or smaller
+        The Step is 0.1 or 1.0
+        **PS:** 
+           * The operation in use is angle_to_be_applied = (your_angle + 30)/60
+           * The result must not be in the 0.01 because the program only listens to 0.1 to 0.9 (0 means, full right, 1 means full left)
         """
+
         angle = float(angle)
         self._print_debug(
             f"{self.info_colour}INFO:{self.reset_colour} raw_angle = {angle}"
@@ -166,9 +170,7 @@ class MotorController:
             self.angle = 0.5
         else:
             self.wheels_straight = False
-            self.angle = (
-                (angle - self.angle_min) / (self.angle_max - self.angle_min)
-            ) * (self.range_max - self.range_max) + self.range_min
+            self.angle = (angle+self.angle_max)/60.0
         self._turn_wheels(self.angle)
         self.raw_angle = angle
         return True
