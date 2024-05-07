@@ -130,7 +130,6 @@ def procedural():
     y_first_derivative = y_cubic(t2, 1)
     y_second_derivative = y_cubic(t2, 2)
 
-    
     r = Rayon_Courbure(x_first_derivative,y_first_derivative,x_second_derivative,y_second_derivative)
     
     angle = angle_virage(r) 
