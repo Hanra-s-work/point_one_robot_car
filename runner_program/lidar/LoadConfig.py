@@ -15,6 +15,7 @@ class LoadConfig:
             self.file_content = load(file)
         except FileNotFoundError:
             print(f'File {path_to_file} not found')
+        self.map = []
 
     def get_config(self):
         pass

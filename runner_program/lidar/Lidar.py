@@ -96,7 +96,7 @@ class Lidar:
         self.Angle_i = angle_i
         self.Distance_i = distance_i
 
-    async def read_serial_data(self):
+    def read_serial_data(self):
         tmp_string = ""
         flag2c = False
         serial_data = self.serial.read_all()
