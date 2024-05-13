@@ -54,7 +54,7 @@ class Main:
 if __name__ == "__main__":
     CO.init_pallet()
     CO.display("0A", (), "Welcome to Runner program")
-    MI = Main(error=1, serial_port="/dev/serial/by-id/usb-STMicroelectronics_ChibiOS_RT_Virtual_COM_Port_304_if00", success=0, co=CO, debug=False)
+    MI = Main(error=1, serial_port="/dev/serial/by-id/usb-STMicroelectronics_ChibiOS_RT_Virtual_COM_Port_304-if00", success=0, co=CO, debug=False)
     status = MI.main()
     CO.unload_ressources()
     sys.exit(status)
