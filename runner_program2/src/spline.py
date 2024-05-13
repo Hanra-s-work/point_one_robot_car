@@ -7,6 +7,7 @@
 
 import numpy as np
 from scipy.interpolate import CubicSpline
+import time
 # import matplotlib.pyplot as plt
 # import xalglib
 
@@ -133,6 +134,8 @@ def procedural(x_car, y_car, controller):
     vitesse = vitesse_minimale+ alpha * np.abs(r)
     controller.run(vitesse[0] * 0.01, False, False)
     controller.turn(angle[0])
+    time.sleep(2)
+    controller.emergency_stop()
     return 0
 
     # plt.plot(x_cubic(t2), y_cubic(t2), 'o-', label='data')
