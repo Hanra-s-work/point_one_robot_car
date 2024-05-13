@@ -7,47 +7,45 @@
 
 import numpy as np
 from scipy.interpolate import CubicSpline
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 # import xalglib
 
 eps = 10e-7
 
-def Rayon_Courbure(x1,y1,x2,y2):
-
+def rayon_courbure(x1,y1,x2,y2):
     return ((x1**2 + y1**2)**(3/2) / (x1 * y2 - y1 * x2+ eps))
 
 # Rc rayon de courbure
 # WB Wheel base distance entre le centre des 2 roues
 # en mm
 def angle_virage(Rc, WB= 325,larg_roues =20):
-    inv_angle= WB / (Rc - larg_roues)
-    inv_angle= np.clip(inv_angle, -1,1)
-    
-    return np.arcsin(inv_angle)
-    
+    inv_angle = WB / (Rc - larg_roues)
+    inv_angle = np.clip(inv_angle, -1,1)
 
-def procedural():
+    return np.arcsin(inv_angle)
+
+def procedural(x_car, y_car, controller):
     x_raw = [8500, # A
              5000, # B
              1500, # C
-             650, # D
-             500, # E
-             500.1, # F
-             650.1, # G
+             750, # D
+             600, # E
+             600.1, # F
+             750.1, # G
              1500.1, # H
              3400, # I
-             4250, # J
-             4400, # K
-             4400.1, # L
-             4250.1, # M
+             4300, # J
+             4450, # K
+             4450.1, # L
+             4300.1, # M
              3400.1, # N
              2766.7, # O
-             2133, # P
+             2300, # P
              1500.2, # Q
-             650.2, # R
-             500.2, # S
-             500.3, # T
-             650.3, # U
+             750.2, # R
+             600.2, # S
+             600.3, # T
+             750.3, # U
              1500.3, # V
              5000.1, # W
              6600.1, # X
@@ -58,10 +56,10 @@ def procedural():
              9350.1, # C2
              8500.2, # D2
              6600.2, # E2
-             5750, # F2
-             5500, # G2
-             5500.1, # H2
-             5750.1, # I2
+             5850, # F2
+             5600, # G2
+             5600.1, # H2
+             5850.1, # I2
              6600.3, # J2
              7450, # K2
              7850, # L2
@@ -70,7 +68,6 @@ def procedural():
              9500.2, # O2
              9500.3, # P2
              9350.3] # Q2
-             
 
     y_raw = [7000, # A
              7000, # B
@@ -87,8 +84,8 @@ def procedural():
              2075.5, # M
              1787.5, # N
              2075.5, # O
-             2700, # P
-             3062.25, # Q
+             2750, # P
+             3120, # Q
              2700, # R
              2075.5, # S
              1500, # T
@@ -115,12 +112,10 @@ def procedural():
              5424.5, # O2
              6000, # P2
              6500] # Q2
-              # A
-             
-    t = np.arange(len(x_raw))
-    t2 = np.linspace(0,len(x_raw), 100)
 
-    # print(t2)
+    t = np.arange(len(x_raw))
+    t2 = np.linspace(0, len(x_raw), 70)
+
     x_cubic = CubicSpline(t, x_raw)
     y_cubic = CubicSpline(t, y_raw)
 
@@ -130,35 +125,36 @@ def procedural():
     y_first_derivative = y_cubic(t2, 1)
     y_second_derivative = y_cubic(t2, 2)
 
-    r = Rayon_Courbure(x_first_derivative,y_first_derivative,x_second_derivative,y_second_derivative)
-    
+    r = rayon_courbure(x_first_derivative, y_first_derivative, x_second_derivative, y_second_derivative)
+
     angle = angle_virage(r) 
-    alpha= 0.5# paramètres à régler
-    vitesse_minimale= 20 # rpm
+    alpha = 0.5 # paramètres à régler
+    vitesse_minimale = 20 # rpm
     vitesse = vitesse_minimale+ alpha * np.abs(r)
+    controller.run(0.5, False, False)
 
-    plt.plot(x_cubic(t2), y_cubic(t2), 'o-', label='data')
-    plt.plot(x_first_derivative, y_first_derivative, label="S'")
-    plt.plot(x_second_derivative, y_second_derivative, label="S''")
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.title('Interpolation Cubique et ses dérivées')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-    
-    
-    plt.plot(x_cubic(t2), 'o-', label='X')
-    plt.plot(y_cubic(t2), 'o-', label='Y')
-    plt.plot(angle*2000,  label="angl")
-    plt.plot(vitesse/20, label="vitesse")
-    plt.xlabel('t2')
-    plt.ylabel('X')
-    plt.title('Interpolation Cubique et ses dérivées')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-    
+    return 0
 
-if __name__ == "__main__":
-    procedural()
+    # plt.plot(x_cubic(t2), y_cubic(t2), 'o-', label='data')
+    # # plt.plot(x_first_derivative, y_first_derivative, label="S'")
+    # # plt.plot(x_second_derivative, y_second_derivative, label="S''")
+    # plt.xlabel('x')
+    # plt.ylabel('y')
+    # plt.title('Interpolation Cubique et ses dérivées')
+    # plt.legend()
+    # plt.grid(True)
+    # plt.show()
+
+    # plt.plot(x_cubic(t2), 'o-', label='X')
+    # plt.plot(y_cubic(t2), 'o-', label='Y')
+    # plt.plot(angle*2000,  label="angle")
+    # plt.plot(vitesse/20, label="vitesse")
+    # plt.xlabel('t2')
+    # plt.ylabel('X')
+    # plt.title('Interpolation Cubique et ses dérivées')
+    # plt.legend()
+    # plt.grid(True)
+    # plt.show()
+
+# if __name__ == "__main__":
+#     procedural()

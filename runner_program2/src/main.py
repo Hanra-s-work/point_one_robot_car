@@ -24,6 +24,8 @@ class Main:
         self.error = error
         self.success = success
         self.debug = debug
+        self.car_pos_x = 8500
+        self.car_pos_y = 7000
         self.motor_controller = MotorController(
             serial_port,
             success,
@@ -38,9 +40,14 @@ class Main:
     def _print_debug(self, string: str = "") -> None:
         if self.debug is True:
             print(f"(m) {string}", file=sys.stderr)
+    
+    def circuit_loop(self) -> None:
+        while (sp.procedural(self.car_pos_x, self.car_pos_y, self.motor_controller) != self.error):
+            continue
 
     def main(self) -> int:
         """ The main function of the program """
+        self.circuit_loop();
         return self.success
 
 
