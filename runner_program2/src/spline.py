@@ -131,8 +131,7 @@ def procedural(x_car, y_car, controller):
     alpha = 0.5 # paramètres à régler
     vitesse_minimale = 20 # rpm
     vitesse = vitesse_minimale+ alpha * np.abs(r)
-    controller.run(0.07, False, False)
-
+    controller.run(0.05, False, False)
     return 0
 
     # plt.plot(x_cubic(t2), y_cubic(t2), 'o-', label='data')

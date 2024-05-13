@@ -11,6 +11,9 @@ import numpy as np
 
 ## pour le c++ : https://github.com/ldrobotSensorTeam/ldlidar_sdk/blob/master/src
 
+lidar_port = input("Enter the lidar port: ")
+if lidar_port == "":
+    lidar_port='COM6'
 
 fig = plt.figure(figsize=(8,8))
 ax = fig.add_subplot(111, projection='polar')
@@ -18,7 +21,7 @@ ax.set_title('lidar (exit: Key E)',fontsize=18)
 
 plt.connect('key_press_event', lambda event: exit(1) if event.key == 'e' else None)
 
-ser = serial.Serial(port='COM6',
+ser = serial.Serial(port=lidar_port,
                     baudrate=230400,
                     timeout=5.0,
                     bytesize=8,
