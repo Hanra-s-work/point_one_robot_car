@@ -139,7 +139,7 @@ def procedural(x_car, y_car, controller):
     controller.run(0.07, False, False)
     time.sleep(0.8)
     controller.turn(30)
-    time.sleep(0.5)
+    time.sleep(1)
     controller.turn(0)
     # time.sleep(1.5)
     # controller.turn(20)
