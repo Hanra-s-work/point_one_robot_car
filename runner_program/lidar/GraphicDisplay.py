@@ -9,10 +9,12 @@ import matplotlib.pyplot as plt
 from math import pi
 from time import time
 from Lidar import Lidar
+from LidarLocation import LidarLocation
 
 
-class GraphicDisplay:
+class GraphicDisplay(LidarLocation):
     def __init__(self):
+        super().__init__()
         self.fig = plt.figure(figsize=(8, 8))
         self.ax = self.fig.add_subplot(111, projection='polar')
         self.ax.set_title('lidar (exit: Key E)', fontsize=18)
@@ -39,3 +41,11 @@ class GraphicDisplay:
 
         self.prevLine = line
         self.prevText = text
+
+    def draw_monte_carlo(self, speed, speed_std_dev, direction, direction_std_dev, sample):
+        res = self._predict_car_position(speed, speed_std_dev, direction, direction_std_dev, sample)
+        ax = plt.axes()
+        ax.set_xlim([0, 50])
+        ax.set_ylim([-25, 25])
+        plt.scatter([x[0] for x in res], [y[0] for y in res])
+        plt.show()

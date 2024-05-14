@@ -18,4 +18,6 @@ class LoadConfig:
         self.map = []
 
     def get_config(self):
-        pass
+        for elem in self.file_content["lidar"]:
+            if elem["exist"]:
+                self.map.append(elem["pos"])
