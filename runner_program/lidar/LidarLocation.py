@@ -48,11 +48,21 @@ class LidarLocation:
             return distance_mean
         return 0
 
+    def __approximate_cone(self, cone):
+        range_cone_x = np.arange(cone[0] - 10, cone[0] + 10, 1).tolist()
+        range_cone_y = np.arange(cone[1] - 10, cone[1] + 10, 1).tolist()
+        for elem in self.config.map:
+            if elem in range_cone_x:
+                if elem in range_cone_y:
+                    return True
+        return False
+
     def _get_cone_from_lidar(self):
         detect = []
         for angle, dist in self.lidar.Angle_i, self.lidar.Distance_i:
             tmp = angle - self.car_angle
             tmp = LidarLocation.polar_to_cartesian(dist, tmp)
+            self.__approximate_cone(tmp)
             detect.append(tmp)
         return detect
 
