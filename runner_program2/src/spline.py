@@ -136,7 +136,7 @@ def procedural(x_car, y_car, controller):
     # controller.turn(angle[0])
     # time.sleep(2)
     # controller.emergency_stop()
-    controller.run(0.02, False, False)
+    controller.run(0.03, False, False)
     time.sleep(0.5)
     controller.turn(10)
     time.sleep(0.2)
