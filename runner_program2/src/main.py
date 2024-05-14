@@ -42,8 +42,9 @@ class Main:
             print(f"(m) {string}", file=sys.stderr)
     
     def circuit_loop(self) -> None:
-        while (sp.procedural(self.car_pos_x, self.car_pos_y, self.motor_controller) != self.error):
-            continue
+        # while ( != self.error):
+            # continue
+        sp.procedural(self.car_pos_x, self.car_pos_y, self.motor_controller)
 
     def main(self) -> int:
         """ The main function of the program """
