@@ -52,8 +52,8 @@ class LidarLocation:
         range_cone_x = np.arange(cone[0] - 10, cone[0] + 10, 1).tolist()
         range_cone_y = np.arange(cone[1] - 10, cone[1] + 10, 1).tolist()
         for elem in self.config.map:
-            if elem in range_cone_x:
-                if elem in range_cone_y:
+            if elem[0] in range_cone_x:
+                if elem[1] in range_cone_y:
                     return True
         return False
 
