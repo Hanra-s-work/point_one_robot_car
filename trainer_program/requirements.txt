@@ -4,5 +4,5 @@ torchvision==0.17.1
 
 # Dependencies for creating an executable
 pyinstaller == 6.5.0
-pillow == 10.2.0
+pillow ==10.3.0
 coverage == 7.4.4
