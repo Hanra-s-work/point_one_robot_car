@@ -50,7 +50,7 @@ feedparser==5.2.1
 filelock==3.4.1
 flatbuffers==1.12
 frozenlist==1.2.0
-future==0.18.2
+future==0.18.3
 futures==3.1.1
 gast==0.4.0
 gdown==4.7.1
