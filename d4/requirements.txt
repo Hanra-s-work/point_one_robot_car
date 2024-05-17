@@ -6,7 +6,7 @@ adafruit-circuitpython-lis3dh==5.1.22
 adafruit-circuitpython-register==1.9.15
 adafruit-circuitpython-requests==1.13.3
 adafruit-circuitpython-rplidar==1.2.14
-adafruit-circuitpython-ssd1306==2.12.13
+adafruit-circuitpython-ssd1306==2.12.17
 adafruit-circuitpython-typing==1.9.3
 Adafruit-GPIO==1.0.3
 Adafruit-PCA9685==1.0.1
