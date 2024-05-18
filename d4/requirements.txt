@@ -124,7 +124,7 @@ pyasn1-modules==0.3.0
 pybind11==2.5.0
 pycairo==1.16.2
 pycrypto==2.6.1
-pycups==1.9.73
+pycups==1.9.74
 pyelftools==0.29
 pyenchant==2.0.0
 pyfiglet==0.8.post1
