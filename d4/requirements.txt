@@ -205,7 +205,7 @@ utm==0.7.0
 virtualenv==20.17.1
 virtualenv-clone==0.5.7
 virtualenvwrapper==4.8.4
-wadllib==1.3.2
+wadllib==1.3.6
 wcwidth==0.2.13
 webencodings==0.5.1
 Werkzeug==3.0.3
