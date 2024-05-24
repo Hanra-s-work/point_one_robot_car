@@ -1,5 +1,5 @@
 absl-py==0.15.0
-Adafruit-Blinka==6.15.0
+Adafruit-Blinka==6.20.4
 adafruit-circuitpython-busdevice==5.1.5
 adafruit-circuitpython-framebuf==1.6.5
 adafruit-circuitpython-lis3dh==5.1.22
