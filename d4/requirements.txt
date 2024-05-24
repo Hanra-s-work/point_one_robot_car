@@ -132,7 +132,7 @@ pyftdi==0.53.3
 pygame==2.4.0
 Pygments==2.15.0
 PyGObject==3.26.1
-PyJWT==1.5.3
+PyJWT==1.7.1
 pymacaroons==0.13.0
 PyNaCl==1.1.2
 pynmea2==1.19.0
