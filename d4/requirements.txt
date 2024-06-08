@@ -130,7 +130,7 @@ pyenchant==2.0.0
 pyfiglet==0.8.post1
 pyftdi==0.53.3
 pygame==2.4.0
-Pygments==2.15.0
+Pygments==2.18.0
 PyGObject==3.26.1
 PyJWT==1.5.3
 pymacaroons==0.13.0
