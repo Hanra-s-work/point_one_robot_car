@@ -25,7 +25,7 @@ asynctest==0.13.0
 attrs==22.2.0
 backcall==0.2.0
 beautifulsoup4==4.12.3
-blinker==1.4
+blinker==1.8.2
 Brlapi==0.6.6
 cachetools==4.2.4
 certifi==2023.7.22
