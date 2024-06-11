@@ -51,7 +51,7 @@ filelock==3.14.0
 flatbuffers==1.12
 frozenlist==1.4.1
 future==0.18.3
-futures==3.1.1
+futures==3.4.0
 gast==0.5.4
 gdown==4.7.3
 google-auth==2.30.0
