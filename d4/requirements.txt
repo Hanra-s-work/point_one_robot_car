@@ -105,7 +105,7 @@ paho-mqtt==1.6.1
 pandas==0.25.3
 parso==0.7.1
 pbr==5.11.1
-pexpect==4.8.0
+pexpect==4.9.0
 pickleshare==0.7.5
 Pillow==10.3.0
 platformdirs==2.4.0
