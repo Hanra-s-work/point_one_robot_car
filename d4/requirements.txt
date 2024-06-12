@@ -102,7 +102,7 @@ olefile==0.47
 onboard==1.4.1
 opt-einsum==3.3.0
 paho-mqtt==1.6.1
-pandas==0.22.0
+pandas==0.25.3
 parso==0.7.1
 pbr==5.11.1
 pexpect==4.8.0
