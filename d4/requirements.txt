@@ -69,7 +69,7 @@ importlib-metadata==4.13.0
 importlib-resources==5.4.0
 ipython==8.10.0
 ipython-genutils==0.2.0
-jedi==0.17.2
+jedi==0.19.1
 jetson-stats==3.1.4
 Jetson.GPIO==2.1.6
 joblib==1.2.0
