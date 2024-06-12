@@ -72,7 +72,7 @@ ipython-genutils==0.2.0
 jedi==0.19.1
 jetson-stats==3.1.4
 Jetson.GPIO==2.1.6
-joblib==1.2.0
+joblib==1.4.2
 Keras-Applications==1.0.8
 keras-nightly==2.5.0.dev2021032900
 Keras-Preprocessing==1.1.2
