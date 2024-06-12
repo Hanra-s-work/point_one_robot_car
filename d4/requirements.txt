@@ -85,7 +85,7 @@ lazr.restfulclient==0.14.6
 lazr.uri==1.0.6
 louis==3.5.0
 lxml==4.9.4
-macaroonbakery==1.1.3
+macaroonbakery==1.3.4
 Mako==1.3.5
 Markdown==3.6
 MarkupSafe==1.1.1
