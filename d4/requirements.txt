@@ -98,7 +98,7 @@ numpy==1.19.5
 oauth==1.0.1
 oauthlib==3.2.2
 odrive==0.6.9.post0
-olefile==0.45.1
+olefile==0.47
 onboard==1.4.1
 opt-einsum==3.3.0
 paho-mqtt==1.6.1
