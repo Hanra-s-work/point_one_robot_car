@@ -120,7 +120,7 @@ ptyprocess==0.7.0
 py==1.5.2
 py-cpuinfo==7.0.0
 pyasn1==0.5.0
-pyasn1-modules==0.3.0
+pyasn1-modules==0.4.0
 pybind11==2.12.0
 pycairo==1.16.2
 pycrypto==2.6.1
