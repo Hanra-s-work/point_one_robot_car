@@ -119,7 +119,7 @@ psutil==5.9.8
 ptyprocess==0.7.0
 py==1.11.0
 py-cpuinfo==7.0.0
-pyasn1==0.5.0
+pyasn1==0.6.0
 pyasn1-modules==0.4.0
 pybind11==2.12.0
 pycairo==1.26.0
