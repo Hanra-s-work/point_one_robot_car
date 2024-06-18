@@ -145,7 +145,7 @@ python-apt==1.6.6
 python-dateutil==2.9.0.post0
 python-debian==0.1.49
 pythoncrc==1.21
-pytz==2018.3
+pytz==2018.9
 pyusb==1.2.1
 pyvesc @ git+https://github.com/LiamBindle/PyVESC@038aeb3f8d42dd91f4c92a4127a12fe4068365f8
 PyWavelets==1.6.0
