@@ -61,7 +61,7 @@ graphsurgeon==0.4.5
 grpcio==1.64.1
 h5py==2.10.0
 html5lib==0.999999999
-httplib2==0.10.3
+httplib2==0.22.0
 idna==3.7
 idna-ssl==1.1.0
 imageio==2.34.1
