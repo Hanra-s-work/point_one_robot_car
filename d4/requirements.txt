@@ -168,7 +168,7 @@ spidev==3.5
 ssh-import-id==5.7
 stevedore==3.5.2
 system-service==0.3
-tensorboard==2.10.1
+tensorboard==2.17.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.5.0+nv21.6
