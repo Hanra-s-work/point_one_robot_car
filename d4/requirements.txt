@@ -165,7 +165,7 @@ simple-pid==2.0.0
 simplejson==3.19.2
 six==1.15.0
 spidev==3.6
-ssh-import-id==5.7
+ssh-import-id==5.11
 stevedore==3.5.2
 system-service==0.3
 tensorboard==2.10.1
