@@ -47,7 +47,7 @@ distro-info===0.18ubuntu0.18.04.1
 docopt==0.6.2
 -e git+https://github.com/autorope/donkeycar@b288400340a9020e6f1f0417d7fa3b63f662df6a#egg=donkeycar
 feedparser==5.2.1
-filelock==3.15.1
+filelock==3.15.3
 flatbuffers==1.12
 frozenlist==1.4.1
 future==0.18.3
