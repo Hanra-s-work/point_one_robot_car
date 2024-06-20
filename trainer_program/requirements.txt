@@ -1,6 +1,6 @@
 tty_ov == 1.0.19
 torch==2.2.1
-torchvision==0.17.1
+torchvision==0.18.1
 
 # Dependencies for creating an executable
 pyinstaller ==6.8.0
