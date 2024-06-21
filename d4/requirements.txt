@@ -179,7 +179,7 @@ testresources==2.0.1
 threadpoolctl==3.5.0
 tifffile==2020.9.3
 torch @ file:///home/jetson/torch-1.8.0-cp36-cp36m-linux_aarch64.whl
-torchvision==0.11.3
+torchvision==0.18.1
 tornado==6.4.1
 tqdm==4.66.4
 traitlets==4.3.3
