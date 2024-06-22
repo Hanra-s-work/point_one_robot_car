@@ -212,6 +212,6 @@ Werkzeug==3.0.3
 wrapt==1.16.0
 xkit==0.0.0
 yarl==1.9.4
-youtube_dl==2018.3.14
+youtube_dl==2018.12.31
 zipp==3.6.0
 zope.interface==4.3.2
