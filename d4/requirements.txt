@@ -161,7 +161,7 @@ scikit-image==0.24.0
 scikit-learn==1.5.1
 scipy==1.13.1
 SecretStorage==3.3.3
-simple-pid==2.0.0
+simple-pid==2.0.1
 simplejson==3.19.2
 six==1.16.0
 spidev==3.6
