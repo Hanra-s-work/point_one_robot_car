@@ -41,7 +41,7 @@ Cython==3.0.10
 dataclasses==0.8
 decorator==5.1.1
 defer==1.0.6
-depthai==2.26.0.0
+depthai==2.27.0.0
 distlib==0.3.8
 distro-info===0.18ubuntu0.18.04.1
 docopt==0.6.2
