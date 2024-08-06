@@ -181,7 +181,7 @@ tifffile==2020.12.8
 torch @ file:///home/jetson/torch-1.8.0-cp36-cp36m-linux_aarch64.whl
 torchvision==0.18.1
 tornado==6.4.1
-tqdm==4.66.4
+tqdm==4.66.5
 traitlets==4.3.3
 typing_extensions==4.12.2
 ubuntu-advantage-tools==8001
