@@ -159,7 +159,7 @@ requests-unixsocket==0.3.0
 rsa==4.9
 scikit-image==0.24.0
 scikit-learn==1.5.1
-scipy==1.13.1
+scipy==1.14.0
 SecretStorage==3.3.3
 simple-pid==2.0.1
 simplejson==3.19.2
