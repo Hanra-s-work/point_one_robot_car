@@ -162,7 +162,7 @@ scikit-learn==1.5.1
 scipy==1.14.0
 SecretStorage==3.3.3
 simple-pid==2.0.1
-simplejson==3.19.2
+simplejson==3.19.3
 six==1.16.0
 spidev==3.6
 ssh-import-id==5.11
