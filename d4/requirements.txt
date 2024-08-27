@@ -208,7 +208,7 @@ virtualenvwrapper==4.8.4
 wadllib==1.3.6
 wcwidth==0.2.13
 webencodings==0.5.1
-Werkzeug==3.0.3
+Werkzeug==3.0.4
 wrapt==1.16.0
 xkit==0.0.0
 yarl==1.9.4
