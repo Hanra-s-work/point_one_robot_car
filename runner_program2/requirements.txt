@@ -9,7 +9,7 @@ matplotlib ==3.9.2
 # pyvesc-fix == 1.0.0
 
 # For cosmetics purposes
-colourise-output ==1.1.5
+colourise-output ==1.1.6
 
 # For compilation purposes
 pyinstaller ==6.10.0
