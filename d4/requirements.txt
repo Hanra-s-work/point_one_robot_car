@@ -70,7 +70,7 @@ importlib-resources==5.13.0
 ipython==8.26.0
 ipython-genutils==0.2.0
 jedi==0.19.1
-jetson-stats==3.1.4
+jetson-stats==4.2.9
 Jetson.GPIO==2.1.6
 joblib==1.4.2
 Keras-Applications==1.0.8
