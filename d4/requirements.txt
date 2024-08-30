@@ -80,7 +80,7 @@ keyring==25.3.0
 keyrings.alt==3.5.2
 kiwisolver==1.4.5
 language-selector==0.1
-launchpadlib==1.11.0
+launchpadlib==2.0.0
 lazr.restfulclient==0.14.6
 lazr.uri==1.0.6
 louis==3.5.0
