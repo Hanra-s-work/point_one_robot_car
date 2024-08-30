@@ -67,7 +67,7 @@ idna-ssl==1.1.0
 imageio==2.35.1
 importlib-metadata==8.4.0
 importlib-resources==6.4.4
-ipython==8.26.0
+ipython==8.27.0
 ipython-genutils==0.2.0
 jedi==0.19.1
 jetson-stats==4.2.9
