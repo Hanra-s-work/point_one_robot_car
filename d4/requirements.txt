@@ -101,7 +101,7 @@ odrive==0.6.9.post0
 olefile==0.47
 onboard==1.4.1
 opt-einsum==3.3.0
-paho-mqtt==1.6.1
+paho-mqtt==2.1.0
 pandas==0.25.3
 parso==0.8.4
 pbr==5.11.1
