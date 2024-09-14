@@ -104,7 +104,7 @@ opt-einsum==3.3.0
 paho-mqtt==2.1.0
 pandas==2.2.2
 parso==0.8.4
-pbr==5.11.1
+pbr==6.1.0
 pexpect==4.9.0
 pickleshare==0.7.5
 Pillow==10.4.0
