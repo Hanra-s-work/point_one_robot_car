@@ -202,7 +202,7 @@ unity-scope-zotero==0.1
 urllib3==1.26.20
 urwid==2.6.15
 utm==0.7.0
-virtualenv==20.26.3
+virtualenv==20.26.5
 virtualenv-clone==0.5.7
 virtualenvwrapper==4.8.4
 wadllib==1.3.6
