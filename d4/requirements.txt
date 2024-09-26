@@ -3,7 +3,7 @@ Adafruit-Blinka==8.47.0
 adafruit-circuitpython-busdevice==5.2.9
 adafruit-circuitpython-framebuf==1.6.5
 adafruit-circuitpython-lis3dh==5.2.2
-adafruit-circuitpython-register==1.9.18
+adafruit-circuitpython-register==1.10.0
 adafruit-circuitpython-requests==4.1.6
 adafruit-circuitpython-rplidar==1.2.14
 adafruit-circuitpython-ssd1306==2.12.17
