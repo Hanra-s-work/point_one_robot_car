@@ -122,7 +122,7 @@ py-cpuinfo==7.0.0
 pyasn1==0.6.1
 pyasn1-modules==0.4.1
 pybind11==2.13.6
-pycairo==1.26.1
+pycairo==1.27.0
 pycrypto==2.6.1
 pycups==1.9.74
 pyelftools==0.31
