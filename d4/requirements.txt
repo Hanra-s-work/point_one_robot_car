@@ -100,7 +100,7 @@ oauthlib==3.2.2
 odrive==0.6.9.post0
 olefile==0.47
 onboard==1.4.1
-opt-einsum==3.3.0
+opt-einsum==3.4.0
 paho-mqtt==2.1.0
 pandas==2.2.3
 parso==0.8.4
