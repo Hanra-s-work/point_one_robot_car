@@ -127,7 +127,7 @@ pycrypto==2.6.1
 pycups==2.0.4
 pyelftools==0.31
 pyenchant==3.2.2
-pyfiglet==0.8.post1
+pyfiglet==1.0.2
 pyftdi==0.55.4
 pygame==2.6.0
 Pygments==2.18.0
