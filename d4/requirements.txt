@@ -126,7 +126,7 @@ pycairo==1.27.0
 pycrypto==2.6.1
 pycups==1.9.74
 pyelftools==0.31
-pyenchant==2.0.0
+pyenchant==3.2.2
 pyfiglet==0.8.post1
 pyftdi==0.55.4
 pygame==2.6.0
