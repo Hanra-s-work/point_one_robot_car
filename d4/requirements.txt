@@ -129,7 +129,7 @@ pyelftools==0.31
 pyenchant==3.2.2
 pyfiglet==1.0.2
 pyftdi==0.55.4
-pygame==2.6.0
+pygame==2.6.1
 Pygments==2.18.0
 PyGObject==3.50.0
 PyJWT==2.9.0
