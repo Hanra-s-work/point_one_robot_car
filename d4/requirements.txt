@@ -204,7 +204,7 @@ urwid==2.6.15
 utm==0.7.0
 virtualenv==20.26.6
 virtualenv-clone==0.5.7
-virtualenvwrapper==6.1.0
+virtualenvwrapper==6.1.1
 wadllib==2.0.0
 wcwidth==0.2.13
 webencodings==0.5.1
