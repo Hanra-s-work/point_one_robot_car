@@ -12,4 +12,4 @@ matplotlib ==3.9.2
 colourise-output ==1.1.6
 
 # For compilation purposes
-pyinstaller ==6.10.0
+pyinstaller ==6.11.0
