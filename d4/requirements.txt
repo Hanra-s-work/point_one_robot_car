@@ -200,7 +200,7 @@ unity-scope-virtualbox==0.1
 unity-scope-yelp==0.1
 unity-scope-zotero==0.1
 urllib3==2.2.3
-urwid==2.6.15
+urwid==2.6.16
 utm==0.7.0
 virtualenv==20.26.6
 virtualenv-clone==0.5.7
