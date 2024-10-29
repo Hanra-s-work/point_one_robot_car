@@ -76,7 +76,7 @@ joblib==1.4.2
 Keras-Applications==1.0.8
 keras-nightly==2.5.0.dev2021032900
 Keras-Preprocessing==1.1.2
-keyring==25.4.1
+keyring==25.5.0
 keyrings.alt==5.0.2
 kiwisolver==1.4.7
 language-selector==0.1
