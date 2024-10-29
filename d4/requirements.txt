@@ -214,4 +214,4 @@ xkit==0.0.0
 yarl==1.16.0
 youtube_dl==2021.12.17
 zipp==3.20.2
-zope.interface==7.1.0
+zope.interface==7.1.1
