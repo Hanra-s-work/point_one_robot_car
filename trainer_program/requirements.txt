@@ -1,4 +1,4 @@
-tty_ov ==1.0.51
+tty_ov ==1.0.55
 torch==2.5.1
 torchvision==0.20.1
 
