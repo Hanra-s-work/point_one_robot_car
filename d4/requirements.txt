@@ -173,7 +173,7 @@ tensorboard-data-server==0.7.2
 tensorboard-plugin-wit==1.8.1
 tensorflow==2.18.0
 tensorflow-estimator==2.15.0
-tensorrt==10.6.0
+tensorrt==10.7.0
 termcolor==2.5.0
 testresources==2.0.1
 threadpoolctl==3.5.0
