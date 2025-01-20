@@ -64,7 +64,7 @@ html5lib==1.1
 httplib2==0.22.0
 idna==3.10
 idna-ssl==1.1.0
-imageio==2.36.0
+imageio==2.37.0
 importlib-metadata==8.5.0
 importlib-resources==6.4.5
 ipython==8.29.0
