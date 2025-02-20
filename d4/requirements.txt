@@ -115,7 +115,7 @@ prettytable==3.12.0
 progress==1.6
 prompt-toolkit==3.0.48
 protobuf==5.28.3
-psutil==6.1.0
+psutil==6.1.1
 ptyprocess==0.7.0
 py==1.11.0
 py-cpuinfo==9.0.0
