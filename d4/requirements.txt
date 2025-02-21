@@ -5,7 +5,7 @@ adafruit-circuitpython-framebuf==1.6.7
 adafruit-circuitpython-lis3dh==5.2.4
 adafruit-circuitpython-register==1.10.2
 adafruit-circuitpython-requests==4.1.9
-adafruit-circuitpython-rplidar==1.2.15
+adafruit-circuitpython-rplidar==1.2.16
 adafruit-circuitpython-ssd1306==2.12.18
 adafruit-circuitpython-typing==1.11.2
 Adafruit-GPIO==1.0.3
