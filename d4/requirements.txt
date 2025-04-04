@@ -4,7 +4,7 @@ adafruit-circuitpython-busdevice==5.2.11
 adafruit-circuitpython-framebuf==1.6.7
 adafruit-circuitpython-lis3dh==5.2.4
 adafruit-circuitpython-register==1.10.2
-adafruit-circuitpython-requests==4.1.9
+adafruit-circuitpython-requests==4.1.10
 adafruit-circuitpython-rplidar==1.2.16
 adafruit-circuitpython-ssd1306==2.12.19
 adafruit-circuitpython-typing==1.11.2
