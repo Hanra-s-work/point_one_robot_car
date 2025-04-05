@@ -1,4 +1,4 @@
-absl-py==2.1.0
+absl-py==2.2.2
 Adafruit-Blinka==8.50.0
 adafruit-circuitpython-busdevice==5.2.11
 adafruit-circuitpython-framebuf==1.6.7
