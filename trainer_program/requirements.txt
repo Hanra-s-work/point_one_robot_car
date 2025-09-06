@@ -1,5 +1,5 @@
 tty_ov ==1.0.75
-torch==2.5.1
+torch==2.8.0
 torchvision==0.20.1
 
 # Dependencies for creating an executable
