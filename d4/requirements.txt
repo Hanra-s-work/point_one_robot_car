@@ -22,7 +22,7 @@ astor==0.8.1
 astunparse==1.6.3
 async-timeout==5.0.1
 asynctest==0.13.0
-attrs==24.2.0
+attrs==24.3.0
 backcall==0.2.0
 beautifulsoup4==4.14.2
 blinker==1.9.0
